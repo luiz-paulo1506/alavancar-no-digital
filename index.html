@@ -582,8 +582,8 @@
             };
 
             try {
-                // Envia para o Supabase via REST API
-                await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
+                // Envia para o Supabase via REST API na tabela dedicada do Quiz
+                await fetch(`${SUPABASE_URL}/rest/v1/leads_alavancar_quiz`, {
                     method: 'POST',
                     headers: {
                         'apikey': SUPABASE_KEY,
