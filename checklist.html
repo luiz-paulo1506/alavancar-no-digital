@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist de Presença Digital Dominante | Alavancar no Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        alavancar: {
+                            navy: '#141E57',
+                            dark: '#0B102E',
+                            gold: '#E7C614',
+                            sky: '#639CD1',
+                            card: '#182469',
+                            surface: '#0F163D'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: radial-gradient(circle at 50% 10%, #1a2770 0%, #0b102e 100%);
+        }
+        .glow-gold {
+            box-shadow: 0 0 30px -5px rgba(231, 198, 20, 0.35);
+        }
+        
+        /* Otimização Estrita para Impressão / Salvar em PDF */
+        @media print {
+            body {
+                background: #FFFFFF !important;
+                color: #0F172A !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .print-only {
+                display: block !important;
+            }
+            .print-card {
+                background: #F8FAFC !important;
+                border: 1px solid #CBD5E1 !important;
+                box-shadow: none !important;
+                color: #0F172A !important;
+                break-inside: avoid;
+            }
+            .print-text-dark {
+                color: #0F172A !important;
+            }
+            .print-text-muted {
+                color: #475569 !important;
+            }
+            .print-badge {
+                border: 1px solid #141E57 !important;
+                color: #141E57 !important;
+                background: #EFF6FF !important;
+            }
+            .print-header {
+                border-bottom: 2px solid #141E57 !important;
+                padding-bottom: 12px !important;
+                margin-bottom: 20px !important;
+            }
+        }
+    </style>
+</head>
+<body class="gradient-bg text-slate-100 min-h-screen font-sans selection:bg-alavancar-gold selection:text-alavancar-dark antialiased">
+
+    <!-- Top Action Bar (Fixa) -->
+    <div class="no-print sticky top-0 z-50 bg-alavancar-dark/90 backdrop-blur-md border-b border-white/10 px-4 py-3">
+        <div class="max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="flex items-center gap-2 text-slate-300 hover:text-white text-xs font-semibold transition">
+                    <span class="text-alavancar-gold">⚡</span>
+                    <span>ALAVANCAR NO DIGITAL</span>
+                </a>
+                <span class="text-slate-600">•</span>
+                <span id="progresso-texto" class="text-xs text-alavancar-gold font-bold bg-alavancar-gold/10 px-2 py-0.5 rounded-full border border-alavancar-gold/20">0 de 15 Concluídos (0%)</span>
+            </div>
+            
+            <div class="flex items-center gap-2">
+                <button onclick="window.print()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-bold transition shadow-sm">
+                    <span>🖨️</span>
+                    <span>Baixar / Imprimir PDF</span>
+                </button>
+                <a href="https://wa.me/5511910071284?text=Ol%C3%A1%20Luiz!%20Estou%20preenchendo%20o%20Checklist%20de%20Presen%C3%A7a%20Digital%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#25D366] hover:bg-[#20BA5A] text-white text-xs font-bold transition shadow-sm">
+                    <span>📲</span>
+                    <span>Falar no WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+
+        <!-- Header da Página -->
+        <header class="print-header text-center sm:text-left mb-10 pb-8 border-b border-white/10">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-alavancar-gold/10 border border-alavancar-gold/30 text-alavancar-gold text-xs font-extrabold uppercase tracking-wider mb-4 print-badge">
+                <span>📋 Isca Digital Oficial • Aplicação Prática em 15 Min</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight mb-4 print-text-dark">
+                Checklist de Presença Digital Dominante
+            </h1>
+            <p class="text-base sm:text-lg text-slate-300 max-w-3xl leading-relaxed print-text-muted">
+                Os 15 pontos vitais para estancar o vazamento de clientes no <strong class="text-white print-text-dark">Google Meu Negócio</strong>, transformar seu <strong class="text-white print-text-dark">Instagram em vitrine de vendas</strong> e acelerar seu <strong class="text-white print-text-dark">Atendimento Comercial no WhatsApp</strong>.
+            </p>
+
+            <!-- Barra de Progresso Visual -->
+            <div class="no-print mt-6 bg-alavancar-card/60 p-4 rounded-2xl border border-white/10">
+                <div class="flex justify-between items-center text-xs font-bold mb-2">
+                    <span class="text-slate-300">Seu Progresso de Implementação</span>
+                    <span id="barra-porcentagem" class="text-alavancar-gold">0%</span>
+                </div>
+                <div class="w-full h-3 bg-black/40 rounded-full overflow-hidden p-0.5">
+                    <div id="barra-preenchimento" class="h-full bg-gradient-to-r from-alavancar-gold to-amber-300 rounded-full transition-all duration-500" style="width: 0%"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ========================================== -->
+        <!-- PILAR 1: GOOGLE MEU NEGÓCIO & SEO LOCAL -->
+        <!-- ========================================== -->
+        <section class="mb-10">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-alavancar-gold/20 text-alavancar-gold flex items-center justify-center font-black text-lg border border-alavancar-gold/30">
+                    🗺️
+                </div>
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-extrabold text-white print-text-dark">
+                        Pilar 1: Google Meu Negócio & SEO Local
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-400 print-text-muted">
+                        Para ser a 1ª escolha quando um cliente pesquisar seu serviço na sua cidade ou bairro.
+                    </p>
+                </div>
+            </div>
+
+            <div class="space-y-3">
+                <!-- Item 1 -->
+                <label class="print-card flex items-start gap-4 p-4 rounded-2xl bg-alavancar-surface/80 border border-white/10 hover:border-alavancar-gold/40 transition cursor-pointer">
+                    <input type="checkbox" id="check-1" onchange="atualizarProgresso()" class="mt-1 w-5 h-5 rounded border-slate-600 text-alavancar-gold focus:ring-alavancar-gold bg-slate-900/50 cursor-pointer">
+                    <div class="flex-1">
+                        <div class="font-bold text-white text-base mb-1 print-text-dark">1. Dados Básicos & Endereço (NAP 100% Preciso)</div>
+                        <p class="text-xs sm:text-sm text-slate-300 print-text-muted leading-relaxed">
+                            Nome comercial limpo (sem palavras-chave forçadas), endereço exato com pino no mapa correto e telefone com DDD atualizado. Evita que o cliente se perca no GPS.
+                        </p>
+                    </div>
+                </label>
+
+                <!-- Item 2 -->
+                <label class="print-card flex items-start gap-4 p-4 rounded-2xl bg-alavancar-surface/80 border border-white/10 hover:border-alavancar-gold/40 transition cursor-pointer">
+                    <input type="checkbox" id="check-2" onchange="atualizarProgresso()" class="mt-1 w-5 h-5 rounded border-slate-600 text-alavancar-gold focus:ring-alavancar-gold bg-slate-900/50 cursor-pointer">
+                    <div class="flex-1">
+                        <div class="font-bold text-white text-base mb-1 print-text-dark">2. Categoria Principal Alinhada ao Serviço Mais Lucrativo</div>
+                        <p class="text-xs sm:text-sm text-slate-300 print-text-muted leading-relaxed">
+                            Defina a categoria primária exatamente no serviço que você mais quer vender e adicione até 4 categorias secundárias relevantes para ampliar o raio de buscas.
+                        </p>
+                    </div>
+                </label>
+
+                <!-- Item 3 -->
+                <label class="print-card flex items-start gap-4 p-4 rounded-2xl bg-alavancar-surface/80 border border-white/10 hover:border-alavancar-gold/40 transition cursor-pointer">
+                    <input type="checkbox" id="check-3" onchange="atualizarProgresso()" class="mt-1 w-5 h-5 rounded border-slate-600 text-alavancar-gold focus:ring-alavancar-gold bg-slate-900/50 cursor-pointer">
+                    <div class="flex-1">
+                        <div class="font-bold text-white text-base mb-1 print-text-dark">3. Gestão Ativa de Avaliações (Mínimo 15+ Reviews 5 Estrelas)</div>
+                        <p class="text-xs sm:text-sm text-slate-300 print-text-muted leading-relaxed">
+                            Peça avaliação para todo cliente atendido. Responda 100% das avaliações em até 24 horas incluindo termos da sua cidade e do serviço prestado para impulsionar o SEO.
+                        </p>
+                    </div>
+                </label>
+
+                <!-- Item 4 -->
+                <label class="print-card flex items-start gap-4 p-4 rounded-2xl bg-alavancar-surface/80 border border-white/10 hover:border-alavancar-gold/40 transition cursor-pointer">
+                    <input type="checkbox" id="check-4" onchange="atualizarProgresso()" class="mt-1 w-5 h-5 rounded border-slate-600 text-alavancar-gold focus:ring-alavancar-gold bg-slate-900/50 cursor-pointer">
+                    <div class="flex-1">
+                        <div class="font-bold text-white text-base mb-1 print-text-dark">4. Galeria de Fotos Reais e Fachada com Alta Resolução</div>
+                        <p class="text-xs sm:text-sm text-slate-300 print-text-muted leading-relaxed">
+                            Fotos nítidas da fachada, ambiente interno, equipe e equipamentos. Elimine fotos escuras, desatualizadas ou que dependam apenas da imagem automática do Street View.
+                        </p>
+                    </div>
+                </label>
+
+                <!-- Item 5 -->
+                <label class="print-card flex items-start gap-4 p-4 rounded-2xl bg-alavancar-surface/80 border border-white/10 hover:border-alavancar-gold/40 transition cursor-pointer">
+                    <input type="checkbox" id="check-5" onchange="atualizarProgresso()" class="mt-1 w-5 h-5 rounded border-slate-600 text-alavancar-gold focus:ring-alavancar-gold bg-slate-900/50 cursor-pointer">
+                    <div class="flex-1">
+                        <div class="font-bold text-white text-base mb-1 print-text-dark">5. Catálogo de Serviços com Nome e Descrição (< 119 Chars)</div>
+                        <p class="text-xs sm:text-sm text-slate-300 print-text-muted leading-relaxed">
+                            Cadastre todos os seus serviços com descrições curtas e persuasivas. O total de Nome + Descrição com menos de 119 caracteres garante que nada seja cortado no celular.
+                        </p>
+                    </div>
+                </label>
+
+                <!-- Item 6 -->
+                <label class="print-card flex items-start gap-4 p-4 rounded-2xl bg-alavancar-surface/80 border border-white/10 hover:border-alavancar-gold/40 transition cursor-pointer">
+                    <input type="checkbox" id="check-6" onchange="atualizarProgresso()" class="mt-1 w-5 h-5 rounded border-slate-600 text-alavancar-gold focus:ring-alavancar-gold bg-slate-900/50 cursor-pointer">
+                    <div class="flex-1">
+                        <div class="font-bold text-white text-base mb-1 print-text-dark">6. Área de Cobertura e Cidades/Bairros Configurados</div>
+                        <p class="text-xs sm:text-sm text-slate-300 print-text-muted leading-relaxed">
+                            Defina milimetricamente os bairros e municípios que você atende, evitando que o Google exiba sua empresa em regiões distantes onde você não opera.
+                        </p>
+                    </div>
+                </label>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- PILAR 2: INSTAGRAM & POSICIONAMENTO -->
+        <!-- ========================================== -->
+        <section class="mb-10">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-alavancar-sky/20 text-alavancar-sky flex items-center justify-center font-black text-lg border border-alavancar-sky/30">
+                    📸
+                </div>
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-extrabold text-white print-text-dark">
+                        Pilar 2: Instagram de Alta Conversão & Autoridade
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-400 print-text-muted">
+                        Para converter visitantes curiosos em leads quentes sem atrito.
+                    </p>
+                </div>
+            </div>
+
+            <div class="space-y-3">
+                <!-- Item 7 -->
+                <label class="print-card flex items-start gap-4 p-4 rounded-2xl bg-alavancar-surface/80 border border-white/10 hover:border-alavancar-sky/40 transition cursor-pointer">
+                    <input type="checkbox" id="check-7" onchange="atualizarProgresso()" class="mt-1 w-5 h-5 rounded border-slate-600 text-alavancar-sky focus:ring-alavancar-sky bg-slate-900/50 cursor-pointer">
+                    <div class="flex-1">
+                        <div class="font-bold text-white text-base mb-1 print-text-dark">7. Bio Cirúrgica em Menos de 110 Caracteres</div>
+                        <p class="text-xs sm:text-sm text-slate-300 print-text-muted leading-relaxed">
+                            Bio direta ao ponto com proposta de valor clara e CTA. Ter menos de 110 caracteres garante que o texto e o link fiquem 100% visíveis sem o botão "...mais" no celular.
+                        </p>
+                    </div>
+                </label>
+
+                <!-- Item 8 -->
+                <label class="print-card flex items-start gap-4 p-4 rounded-2xl bg-alavancar-surface/80 border border-white/10 hover:border-alavancar-sky/40 transition cursor-pointer">
+                    <input type="checkbox" id="check-8" onchange="atualizarProgresso()" class="mt-1 w-5 h-5 rounded border-slate-600 text-alavancar-sky focus:ring-alavancar-sky bg-slate-900/50 cursor-pointer">
+                    <div class="flex-1">
+                        <div class="font-bold text-white text-base mb-1 print-text-dark">8. Tríade dos Posts Fixados no Topo do Grid</div>
+                        <p class="text-xs sm:text-sm text-slate-300 print-text-muted leading-relaxed">
+                            Mantenha 3 posts fixados estratégicos: 1) Quem Somos & História; 2) Oferta Principal & Como Funciona; 3) Casos de Sucesso & Resultados Comprovados.
+                        </p>
+                    </div>
+                </label>
+
+                <!-- Item 9 -->
+                <label class="print-card flex items-start gap-4 p-4 rounded-2xl bg-alavancar-surface/80 border border-white/10 hover:border-alavancar-sky/40 transition cursor-pointer">
+                    <input type="checkbox" id="check-9" onchange="atualizarProgresso()" class="mt-1 w-5 h-5 rounded border-slate-600 text-alavancar-sky focus:ring-alavancar-sky bg-slate-900/50 cursor-pointer">
+                    <div class="flex-1">
+                        <div class="font-bold text-white text-base mb-1 print-text-dark">9. Funil de Destaques Estratégicos com Capas Limpas</div>
+                        <p class="text-xs sm:text-sm text-slate-300 print-text-muted leading-relaxed">
+                            Organize os círculos de Destaques como um menu de site: <em>Comece Aqui</em>, <em>Serviços</em>, <em>Resultados/Depoimentos</em>, <em>Dúvidas Frequentes</em> e <em>Contato</em>.
+                        </p>
+                    </div>
+                </label>
+
+                <!-- Item 10 -->
+                <label class="print-card flex items-start gap-4 p-4 rounded-2xl bg-alavancar-surface/80 border border-white/10 hover:border-alavancar-sky/40 transition cursor-pointer">
+                    <input type="checkbox" id="check-10" onchange="atualizarProgresso()" class="mt-1 w-5 h-5 rounded border-slate-600 text-alavancar-sky focus:ring-alavancar-sky bg-slate-900/50 cursor-pointer">
+                    <div class="flex-1">
+                        <div class="font-bold text-white text-base mb-1 print-text-dark">10. Link Único Direto para o WhatsApp</div>
+                        <p class="text-xs sm:text-sm text-slate-300 print-text-muted leading-relaxed">
+                            Substitua árvores com 15 botões confusos por um link direto (wa.me) com mensagem pré-formatada ou uma Landing Page rápida focada exclusivamente em contato.
+                        </p>
+                    </div>
+                </label>
+
+                <!-- Item 11 -->
+                <label class="print-card flex items-start gap-4 p-4 rounded-2xl bg-alavancar-surface/80 border border-white/10 hover:border-alavancar-sky/40 transition cursor-pointer">
+                    <input type="checkbox" id="check-11" onchange="atualizarProgresso()" class="mt-1 w-5 h-5 rounded border-slate-600 text-alavancar-sky focus:ring-alavancar-sky bg-slate-900/50 cursor-pointer">
+                    <div class="flex-1">
+                        <div class="font-bold text-white text-base mb-1 print-text-dark">11. Prova Social Semanal no Feed e Stories</div>
+                        <p class="text-xs sm:text-sm text-slate-300 print-text-muted leading-relaxed">
+                            Publique pelo menos 1 a 2 vezes por semana prints de mensagens de clientes satisfeitos, antes/depois ou bastidores de entregas concluídas com sucesso.
+                        </p>
+                    </div>
+                </label>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- PILAR 3: ATENDIMENTO & WHATSAPP COMERCIAL -->
+        <!-- ========================================== -->
+        <section class="mb-12">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-black text-lg border border-emerald-500/30">
+                    💬
+                </div>
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-extrabold text-white print-text-dark">
+                        Pilar 3: Atendimento, WhatsApp & Processo Comercial
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-400 print-text-muted">
+                        Para fechar vendas com agilidade e não perder dinheiro no vácuo.
+                    </p>
+                </div>
+            </div>
+
+            <div class="space-y-3">
+                <!-- Item 12 -->
+                <label class="print-card flex items-start gap-4 p-4 rounded-2xl bg-alavancar-surface/80 border border-white/10 hover:border-emerald-400/40 transition cursor-pointer">
+                    <input type="checkbox" id="check-12" onchange="atualizarProgresso()" class="mt-1 w-5 h-5 rounded border-slate-600 text-emerald-400 focus:ring-emerald-400 bg-slate-900/50 cursor-pointer">
+                    <div class="flex-1">
+                        <div class="font-bold text-white text-base mb-1 print-text-dark">12. WhatsApp Business Profissional Configurado</div>
+                        <p class="text-xs sm:text-sm text-slate-300 print-text-muted leading-relaxed">
+                            Foto de perfil nítida da marca, horários de funcionamento, endereço, catálogo de serviços e mensagem automática de saudação que acolhe o cliente imediatamente.
+                        </p>
+                    </div>
+                </label>
+
+                <!-- Item 13 -->
+                <label class="print-card flex items-start gap-4 p-4 rounded-2xl bg-alavancar-surface/80 border border-white/10 hover:border-emerald-400/40 transition cursor-pointer">
+                    <input type="checkbox" id="check-13" onchange="atualizarProgresso()" class="mt-1 w-5 h-5 rounded border-slate-600 text-emerald-400 focus:ring-emerald-400 bg-slate-900/50 cursor-pointer">
+                    <div class="flex-1">
+                        <div class="font-bold text-white text-base mb-1 print-text-dark">13. Tempo de Resposta Comercial em Menos de 10 Minutos</div>
+                        <p class="text-xs sm:text-sm text-slate-300 print-text-muted leading-relaxed">
+                            Leads que chegam por anúncio compram de quem responde primeiro. Estabeleça alerta sonoro ou triagem rápida para responder dúvidas de preços com máxima agilidade.
+                        </p>
+                    </div>
+                </label>
+
+                <!-- Item 14 -->
+                <label class="print-card flex items-start gap-4 p-4 rounded-2xl bg-alavancar-surface/80 border border-white/10 hover:border-emerald-400/40 transition cursor-pointer">
+                    <input type="checkbox" id="check-14" onchange="atualizarProgresso()" class="mt-1 w-5 h-5 rounded border-slate-600 text-emerald-400 focus:ring-emerald-400 bg-slate-900/50 cursor-pointer">
+                    <div class="flex-1">
+                        <div class="font-bold text-white text-base mb-1 print-text-dark">14. Script de Apresentação de Valor (Sem Preço Seco)</div>
+                        <p class="text-xs sm:text-sm text-slate-300 print-text-muted leading-relaxed">
+                            Nunca responda apenas o valor monetário. Faça 1 ou 2 perguntas para entender a real necessidade, mostre a garantia/diferencial e só então passe a proposta com o próximo passo.
+                        </p>
+                    </div>
+                </label>
+
+                <!-- Item 15 -->
+                <label class="print-card flex items-start gap-4 p-4 rounded-2xl bg-alavancar-surface/80 border border-white/10 hover:border-emerald-400/40 transition cursor-pointer">
+                    <input type="checkbox" id="check-15" onchange="atualizarProgresso()" class="mt-1 w-5 h-5 rounded border-slate-600 text-emerald-400 focus:ring-emerald-400 bg-slate-900/50 cursor-pointer">
+                    <div class="flex-1">
+                        <div class="font-bold text-white text-base mb-1 print-text-dark">15. Régua Ativa de Follow-up (24h e 48h)</div>
+                        <p class="text-xs sm:text-sm text-slate-300 print-text-muted leading-relaxed">
+                            Quando o cliente sumir após o orçamento, envie uma mensagem amigável no dia seguinte: <em>"Olá [Nome]! Conseguiu avaliar a proposta? Quer que eu tire alguma dúvida?"</em>. Recupera até 30% das vendas.
+                        </p>
+                    </div>
+                </label>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- BANNER DE OFERTA ESPECIAL (ONE-TIME OFFER) -->
+        <!-- ========================================== -->
+        <section class="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-alavancar-navy via-alavancar-card to-alavancar-dark border-2 border-alavancar-gold/60 glow-gold text-center sm:text-left print-card">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div class="flex-1">
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-alavancar-gold/20 text-alavancar-gold border border-alavancar-gold/40 text-xs font-black uppercase tracking-wider mb-3">
+                        <span>🔥 Condição Exclusiva do Quiz • 35% OFF</span>
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-black text-white tracking-tight leading-tight mb-2 print-text-dark">
+                        Quer que a nossa equipe execute tudo isso para a sua empresa?
+                    </h3>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-xl print-text-muted">
+                        Projeto Especial de <strong class="text-white print-text-dark">60 Dias de Gestão de Tráfego Pago & Posicionamento Online</strong> (Google Meu Negócio + Google Ads + Meta Ads WhatsApp).
+                    </p>
+                    <div class="mt-4 flex items-baseline gap-3">
+                        <span class="text-sm text-slate-400 line-through">De R$ 1.000,00</span>
+                        <span class="text-2xl sm:text-3xl font-black text-alavancar-gold">Por Apenas R$ 650,00</span>
+                        <span class="text-xs text-emerald-400 font-semibold">(60 dias de projeto)</span>
+                    </div>
+                </div>
+
+                <div class="w-full sm:w-auto flex-shrink-0">
+                    <a href="obrigado.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-alavancar-gold to-amber-300 hover:from-amber-300 hover:to-alavancar-gold text-alavancar-dark font-black py-4 px-8 rounded-2xl shadow-xl hover:scale-105 transition-all text-sm uppercase tracking-wider">
+                        <span>Ver Detalhes da Oferta</span>
+                        <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="no-print mt-12 py-8 border-t border-white/10 text-center text-xs text-slate-400">
+        <p class="mb-1">© 2026 Alavancar no Digital • Gestão de Tráfego Pago & Presença Digital</p>
+        <p>Especialista: Luiz Paulo • WhatsApp: (11) 91007-1284</p>
+    </footer>
+
+    <!-- Script de Persistência e Progresso -->
+    <script>
+        const TOTAL_ITEMS = 15;
+
+        function carregarProgresso() {
+            for (let i = 1; i <= TOTAL_ITEMS; i++) {
+                const salvo = localStorage.getItem(`checklist_item_${i}`);
+                if (salvo === 'true') {
+                    const el = document.getElementById(`check-${i}`);
+                    if (el) el.checked = true;
+                }
+            }
+            atualizarProgresso(false);
+        }
+
+        function atualizarProgresso(salvar = true) {
+            let marcados = 0;
+            for (let i = 1; i <= TOTAL_ITEMS; i++) {
+                const el = document.getElementById(`check-${i}`);
+                if (el && el.checked) {
+                    marcados++;
+                    if (salvar) localStorage.setItem(`checklist_item_${i}`, 'true');
+                } else {
+                    if (salvar) localStorage.removeItem(`checklist_item_${i}`);
+                }
+            }
+
+            const pct = Math.round((marcados / TOTAL_ITEMS) * 100);
+            
+            const textoProgresso = document.getElementById('progresso-texto');
+            if (textoProgresso) {
+                textoProgresso.innerText = `${marcados} de ${TOTAL_ITEMS} Concluídos (${pct}%)`;
+            }
+
+            const barraPreenchimento = document.getElementById('barra-preenchimento');
+            if (barraPreenchimento) {
+                barraPreenchimento.style.width = `${pct}%`;
+            }
+
+            const barraPorcentagem = document.getElementById('barra-porcentagem');
+            if (barraPorcentagem) {
+                barraPorcentagem.innerText = `${pct}%`;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', carregarProgresso);
+    </script>
+</body>
+</html>

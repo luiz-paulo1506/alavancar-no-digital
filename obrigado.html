@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso Liberado & Oferta Especial | Alavancar no Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        alavancar: {
+                            navy: '#141E57',
+                            dark: '#0B102E',
+                            gold: '#E7C614',
+                            sky: '#639CD1',
+                            card: '#182469',
+                            surface: '#0F163D'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: radial-gradient(circle at 50% 10%, #1a2770 0%, #0b102e 100%);
+        }
+        .glow-gold {
+            box-shadow: 0 0 40px -5px rgba(231, 198, 20, 0.4);
+        }
+        .glow-green {
+            box-shadow: 0 0 30px -5px rgba(37, 211, 102, 0.4);
+        }
+    </style>
+</head>
+<body class="gradient-bg text-slate-100 min-h-screen font-sans selection:bg-alavancar-gold selection:text-alavancar-dark antialiased py-8 sm:py-12 px-4 sm:px-6">
+
+    <div class="max-w-3xl mx-auto">
+
+        <!-- Header / Logo -->
+        <div class="text-center mb-8">
+            <div class="inline-flex items-center gap-3 mb-2">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-alavancar-navy to-alavancar-gold flex items-center justify-center font-black text-alavancar-dark text-xl shadow-lg shadow-alavancar-gold/20">
+                    ⚡
+                </div>
+                <div class="text-left">
+                    <span class="font-extrabold text-lg tracking-tight text-white block leading-none">ALAVANCAR</span>
+                    <span class="text-[10px] font-bold tracking-widest text-alavancar-gold uppercase">No Digital</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- BLOCO 1: CONFIRMAÇÃO & ENTREGA DA ISCA -->
+        <!-- ========================================== -->
+        <div class="bg-alavancar-surface/90 border border-emerald-500/30 rounded-3xl p-6 sm:p-8 mb-8 backdrop-blur-md shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="text-center">
+                <div class="w-16 h-16 bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl glow-green">
+                    ✓
+                </div>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-2">
+                    Diagnóstico Concluído com Sucesso
+                </div>
+                <h1 class="text-2xl sm:text-4xl font-black text-white tracking-tight mb-3">
+                    Seu Acesso ao Checklist Está Liberado!
+                </h1>
+                <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-6 leading-relaxed">
+                    Você pode acessar a versão web interativa agora mesmo ou salvar em PDF no seu celular ou computador.
+                </p>
+
+                <!-- Botão de Acesso ao Checklist -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="checklist.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-alavancar-gold to-amber-300 hover:from-amber-300 hover:to-alavancar-gold text-alavancar-dark font-black py-4 px-8 rounded-2xl shadow-xl hover:scale-105 transition-all text-sm uppercase tracking-wider">
+                        <span>📥 Acessar Checklist Interativo (HTML & PDF)</span>
+                        <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- BLOCO 2: OFERTA ESPECIAL EXCLUSIVA (35% OFF) -->
+        <!-- ========================================== -->
+        <div class="bg-gradient-to-br from-alavancar-card/90 via-alavancar-navy/90 to-alavancar-dark border-2 border-alavancar-gold/70 rounded-3xl p-6 sm:p-10 backdrop-blur-md shadow-2xl relative glow-gold overflow-hidden">
+            <div class="absolute -top-10 -right-10 w-64 h-64 bg-alavancar-gold/15 rounded-full blur-3xl pointer-events-none"></div>
+
+            <!-- Badge de Oferta Única -->
+            <div class="flex items-center justify-between flex-wrap gap-2 mb-6">
+                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-alavancar-gold text-alavancar-dark text-xs font-black uppercase tracking-wider shadow-md">
+                    🔥 Oportunidade Exclusiva do Quiz • 35% OFF
+                </span>
+                <span class="text-xs text-slate-300 font-semibold bg-white/10 px-3 py-1 rounded-full border border-white/10">
+                    Vagas Limitadas por Região
+                </span>
+            </div>
+
+            <!-- Headline da Oferta -->
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight mb-4">
+                Você descobriu onde sua empresa está perdendo clientes.<br>
+                <span class="text-alavancar-gold">Que tal deixar um especialista executar a virada para você?</span>
+            </h2>
+
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6 font-normal">
+                Se você não tem tempo para configurar anúncios, arrumar o Google Meu Negócio ou criar campanhas do zero, criamos um <strong class="text-white font-semibold">Plano de Aceleração de 60 Dias</strong> com acompanhamento direto do especialista.
+            </p>
+
+            <!-- O que está incluso no Projeto de 60 Dias -->
+            <div class="bg-black/30 rounded-2xl p-5 sm:p-6 border border-white/10 mb-8">
+                <h3 class="font-extrabold text-white text-base sm:text-lg mb-4 flex items-center gap-2">
+                    <span class="text-alavancar-gold">💎</span>
+                    <span>O que está incluso no Projeto de 60 Dias:</span>
+                </h3>
+
+                <div class="space-y-3.5 text-xs sm:text-sm text-slate-200">
+                    <div class="flex items-start gap-3">
+                        <span class="text-alavancar-gold font-bold text-base mt-0.5">✓</span>
+                        <div>
+                            <strong class="text-white">Otimização dos 17 Pontos do Google Meu Negócio (SEO Local):</strong>
+                            <span class="text-slate-300 block text-xs mt-0.5">Sua empresa no topo das buscas no Google Maps quando alguém pesquisar pelo seu serviço na sua cidade.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <span class="text-alavancar-gold font-bold text-base mt-0.5">✓</span>
+                        <div>
+                            <strong class="text-white">Estruturação & Blindagem do Google Ads (Rede de Pesquisa):</strong>
+                            <span class="text-slate-300 block text-xs mt-0.5">Campanhas com 30+ palavras-chave de alta intenção e blindagem de 230+ termos negativos para não queimar verba com curiosos.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <span class="text-alavancar-gold font-bold text-base mt-0.5">✓</span>
+                        <div>
+                            <strong class="text-white">Campanhas de Atração no Meta Ads (Instagram & Facebook):</strong>
+                            <span class="text-slate-300 block text-xs mt-0.5">Anúncios segmentados na sua região levando pessoas qualificadas diretamente para o seu WhatsApp.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <span class="text-alavancar-gold font-bold text-base mt-0.5">✓</span>
+                        <div>
+                            <strong class="text-white">Alinhamento de Perfil do Instagram para Conversão:</strong>
+                            <span class="text-slate-300 block text-xs mt-0.5">Ajuste de Bio (< 110 chars sem corte), roteiro da Tríade de Fixados e Funil de Destaques de vendas.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <span class="text-alavancar-gold font-bold text-base mt-0.5">✓</span>
+                        <div>
+                            <strong class="text-white">Relatórios & Acompanhamento Periódico no WhatsApp:</strong>
+                            <span class="text-slate-300 block text-xs mt-0.5">Transparência total sobre volume de contatos, custo por oportunidade e ajustes contínuos.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bloco de Preço & Desconto -->
+            <div class="bg-gradient-to-r from-alavancar-surface to-alavancar-dark p-6 rounded-2xl border border-alavancar-gold/40 text-center mb-8">
+                <div class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Valor Normal do Projeto de 60 Dias</div>
+                <div class="text-lg text-slate-400 line-through mb-1">R$ 1.000,00</div>
+                <div class="text-xs text-emerald-400 font-extrabold uppercase tracking-wide mb-2">Desconto Exclusivo de 35% Aplicado</div>
+                <div class="text-4xl sm:text-5xl font-black text-white tracking-tight mb-1">
+                    Apenas <span class="text-alavancar-gold">R$ 650,00</span>
+                </div>
+                <p class="text-xs text-slate-300">Pagamento único para os 60 dias completos de gestão e posicionamento.</p>
+            </div>
+
+            <!-- Botão de WhatsApp Direto -->
+            <div class="text-center">
+                <a href="https://wa.me/5511910071284?text=Ol%C3%A1%20Luiz!%20Acabei%20de%20responder%20o%20Quiz%20da%20Alavancar%20no%20Digital%20e%20acessei%20o%20Checklist.%20Quero%20aproveitar%20a%20condi%C3%A7%C3%A3o%20especial%20de%2035%25%20OFF%20no%20projeto%20de%2060%20dias%20por%20R%24%20650%20para%20alavancar%20minha%20empresa!" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20BA5A] text-white font-black py-4 px-8 rounded-2xl shadow-xl hover:scale-105 transition-all text-base uppercase tracking-wider glow-green">
+                    <span>📲 Quero Garantir Minha Vaga com 35% OFF</span>
+                    <span>→</span>
+                </a>
+
+                <p class="text-[11px] text-slate-400 mt-3">
+                    🔒 <strong class="text-slate-300">Exclusividade Regional:</strong> Atendemos apenas 1 empresa por nicho na mesma cidade/bairro para evitar conflito de interesses.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Rodapé -->
+        <footer class="mt-12 text-center text-xs text-slate-400">
+            <p class="mb-1">© 2026 Alavancar no Digital • Gestão de Tráfego Pago & Presença Digital</p>
+            <p>Especialista Responsável: Luiz Paulo • WhatsApp: (11) 91007-1284</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

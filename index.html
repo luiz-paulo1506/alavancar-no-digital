@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alavancar no Digital | Teste de Publicação em Nuvem</title>
+    <title>Raio-X de Presença Digital | Alavancar no Digital</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -18,7 +18,8 @@
                             dark: '#0B102E',
                             gold: '#E7C614',
                             sky: '#639CD1',
-                            card: '#182469'
+                            card: '#182469',
+                            surface: '#0F163D'
                         }
                     },
                     fontFamily: {
@@ -29,92 +30,576 @@
         }
     </script>
     <style>
-        .glow-gold {
-            box-shadow: 0 0 35px -5px rgba(231, 198, 20, 0.4);
-        }
-        .glow-sky {
-            box-shadow: 0 0 35px -5px rgba(99, 156, 209, 0.3);
-        }
         .gradient-bg {
-            background: radial-gradient(circle at 50% 20%, #1a2770 0%, #0b102e 100%);
+            background: radial-gradient(circle at 50% 10%, #1a2770 0%, #0b102e 100%);
+        }
+        .glow-gold {
+            box-shadow: 0 0 35px -5px rgba(231, 198, 20, 0.35);
+        }
+        .glow-active {
+            box-shadow: 0 0 25px rgba(231, 198, 20, 0.45);
         }
     </style>
 </head>
-<body class="gradient-bg text-slate-100 min-h-screen flex flex-col justify-between font-sans selection:bg-alavancar-gold selection:text-alavancar-dark">
+<body class="gradient-bg text-slate-100 min-h-screen font-sans selection:bg-alavancar-gold selection:text-alavancar-dark antialiased flex flex-col justify-between">
 
-    <!-- Header -->
-    <header class="w-full border-b border-white/10 backdrop-blur-md bg-alavancar-dark/60 sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Header / Branding -->
+    <header class="w-full border-b border-white/10 backdrop-blur-md bg-alavancar-dark/70 sticky top-0 z-50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-alavancar-navy to-alavancar-gold flex items-center justify-center font-black text-alavancar-dark text-xl shadow-lg shadow-alavancar-gold/20">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-alavancar-navy to-alavancar-gold flex items-center justify-center font-black text-alavancar-dark text-lg shadow-md shadow-alavancar-gold/20">
                     ⚡
                 </div>
                 <div>
-                    <span class="font-extrabold text-lg tracking-tight text-white block leading-none">ALAVANCAR</span>
+                    <span class="font-extrabold text-base tracking-tight text-white block leading-none">ALAVANCAR</span>
                     <span class="text-[10px] font-bold tracking-widest text-alavancar-gold uppercase">No Digital</span>
                 </div>
             </div>
-            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                Publicado na Nuvem
-            </span>
+            
+            <a href="https://instagram.com/luiz.paulo1506" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition">
+                <span>📸</span>
+                <span>@luiz.paulo1506</span>
+            </a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <main class="flex-grow flex items-center justify-center px-6 py-16">
-        <div class="max-w-3xl w-full text-center">
-            
-            <!-- Badge -->
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm">
-                <span class="text-alavancar-gold font-bold text-sm">🚀 Teste de Deploy 100% Automático</span>
-                <span class="text-slate-400 text-sm">•</span>
-                <span class="text-alavancar-sky text-sm font-medium">Nuvem Ilimitada</span>
-            </div>
+    <!-- Main Container -->
+    <main class="flex-grow flex items-center justify-center px-4 sm:px-6 py-8">
+        <div class="max-w-2xl w-full">
 
-            <!-- Main Heading -->
-            <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight leading-tight mb-6">
-                Hello, <span class="bg-clip-text text-transparent bg-gradient-to-r from-alavancar-gold via-amber-200 to-alavancar-sky">World!</span> 🌍
-            </h1>
-
-            <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
-                Este é o seu ambiente de geração e publicação instantânea de materiais e páginas de prospecção com a identidade oficial da <strong class="text-white font-semibold">Alavancar no Digital</strong>.
-            </p>
-
-            <!-- Cards de Demonstração -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10 text-left">
-                <div class="p-5 rounded-2xl bg-alavancar-card/40 border border-white/10 backdrop-blur-md hover:border-alavancar-gold/40 transition">
-                    <div class="w-8 h-8 rounded-lg bg-alavancar-gold/20 text-alavancar-gold flex items-center justify-center font-bold mb-3">1</div>
-                    <h3 class="font-bold text-white text-base mb-1">Geração Instantânea</h3>
-                    <p class="text-xs text-slate-400">Criamos páginas, quizzes e diagnósticos em minutos.</p>
+            <!-- Barra de Progresso (Oculta na Capa e no Final) -->
+            <div id="container-progresso" class="hidden mb-6">
+                <div class="flex justify-between items-center text-xs font-bold mb-2">
+                    <span id="label-etapa" class="text-slate-300">Pergunta 1 de 15</span>
+                    <span id="label-porcentagem" class="text-alavancar-gold">7%</span>
                 </div>
-                <div class="p-5 rounded-2xl bg-alavancar-card/40 border border-white/10 backdrop-blur-md hover:border-alavancar-sky/40 transition">
-                    <div class="w-8 h-8 rounded-lg bg-alavancar-sky/20 text-alavancar-sky flex items-center justify-center font-bold mb-3">2</div>
-                    <h3 class="font-bold text-white text-base mb-1">Deploy na Nuvem</h3>
-                    <p class="text-xs text-slate-400">Publicação direta com link HTTPS seguro e ilimitado.</p>
-                </div>
-                <div class="p-5 rounded-2xl bg-alavancar-card/40 border border-white/10 backdrop-blur-md hover:border-emerald-400/40 transition">
-                    <div class="w-8 h-8 rounded-lg bg-emerald-400/20 text-emerald-400 flex items-center justify-center font-bold mb-3">3</div>
-                    <h3 class="font-bold text-white text-base mb-1">Conversão no WhatsApp</h3>
-                    <p class="text-xs text-slate-400">Botões otimizados para trazer leads prontos para fechar.</p>
+                <div class="w-full h-2.5 bg-black/40 rounded-full overflow-hidden p-0.5 border border-white/10">
+                    <div id="barra-progresso" class="h-full bg-gradient-to-r from-alavancar-gold to-amber-300 rounded-full transition-all duration-300" style="width: 7%"></div>
                 </div>
             </div>
 
-            <!-- Botão de Ação -->
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20vi%20o%20material%20da%20Alavancar%20no%20Digital!" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-alavancar-gold hover:bg-yellow-400 text-alavancar-dark font-extrabold text-base shadow-lg shadow-alavancar-gold/25 hover:shadow-alavancar-gold/40 hover:scale-[1.02] active:scale-[0.98] transition flex items-center justify-center gap-3">
-                    <span>💬 Simulação de Botão WhatsApp</span>
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                </a>
+            <!-- ========================================== -->
+            <!-- 1. TELA DE INTRODUÇÃO / CAPA -->
+            <!-- ========================================== -->
+            <div id="tela-intro" class="text-center bg-alavancar-surface/90 border border-white/10 rounded-3xl p-6 sm:p-10 backdrop-blur-md shadow-2xl">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-alavancar-gold/10 border border-alavancar-gold/30 text-alavancar-gold text-xs font-extrabold uppercase tracking-wider mb-6">
+                    <span>🔍 Teste Rápido • 2 Minutos</span>
+                </div>
+
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight mb-4">
+                    Raio-X de Presença Digital:<br>
+                    <span class="text-alavancar-gold">Por onde sua empresa está perdendo clientes?</span>
+                </h1>
+
+                <p class="text-sm sm:text-base text-slate-300 max-w-xl mx-auto mb-8 leading-relaxed font-normal">
+                    Descubra sua nota de maturidade de <strong class="text-white">15 a 60 pontos</strong> no Google Meu Negócio, Instagram e Atendimento Comercial, e libere o <strong class="text-alavancar-gold">Checklist Oficial de 15 Minutos</strong> para estancar o vazamento.
+                </p>
+
+                <button onclick="iniciarQuiz()" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-alavancar-gold to-amber-300 hover:from-amber-300 hover:to-alavancar-gold text-alavancar-dark font-black py-4 px-10 rounded-2xl shadow-xl hover:scale-105 transition-all text-base uppercase tracking-wider glow-gold">
+                    <span>Começar Raio-X Gratuito</span>
+                    <span>→</span>
+                </button>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- 2. TELA DAS PERGUNTAS (ONE-CLICK ADVANCE) -->
+            <!-- ========================================== -->
+            <div id="tela-pergunta" class="hidden bg-alavancar-surface/90 border border-white/10 rounded-3xl p-6 sm:p-8 backdrop-blur-md shadow-2xl">
+                
+                <div class="flex items-center gap-2 mb-3">
+                    <span id="categoria-badge" class="px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider bg-alavancar-card text-alavancar-sky border border-alavancar-sky/30">
+                        🗺️ Google Meu Negócio
+                    </span>
+                </div>
+
+                <h2 id="titulo-pergunta" class="text-xl sm:text-2xl font-black text-white tracking-tight leading-snug mb-6">
+                    Pergunta aqui...
+                </h2>
+
+                <div id="container-opcoes" class="space-y-3">
+                    <!-- Opções geradas via JS -->
+                </div>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- 3. TELA FINAL: GABARITO & FORMULÁRIO -->
+            <!-- ========================================== -->
+            <div id="tela-final" class="hidden space-y-6">
+
+                <!-- Card de Pontuação e Arquétipo -->
+                <div class="bg-alavancar-surface/90 border border-alavancar-gold/40 rounded-3xl p-6 sm:p-8 backdrop-blur-md shadow-2xl text-center glow-gold">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-alavancar-gold/20 text-alavancar-gold border border-alavancar-gold/30 text-xs font-black uppercase tracking-wider mb-3">
+                        🎯 Seu Resultado Consolidado
+                    </div>
+                    
+                    <div class="text-4xl sm:text-5xl font-black text-white mb-2">
+                        <span id="pontuacao-final" class="text-alavancar-gold">0</span> <span class="text-2xl text-slate-400">/ 60 Pontos</span>
+                    </div>
+
+                    <div id="arquetipo-nome" class="text-2xl sm:text-3xl font-black text-white mb-3">
+                        Carregando...
+                    </div>
+
+                    <p id="arquetipo-diagnostico" class="text-sm text-slate-300 max-w-xl mx-auto leading-relaxed">
+                        Diagnóstico detalhado aqui...
+                    </p>
+                </div>
+
+                <!-- Gabarito dos 4 Arquétipos -->
+                <div class="bg-alavancar-card/70 border border-white/10 rounded-3xl p-5 sm:p-6 backdrop-blur-md">
+                    <h3 class="font-extrabold text-white text-sm sm:text-base uppercase tracking-wider mb-4 flex items-center gap-2">
+                        <span>📊 Gabarito das Faixas de Maturidade:</span>
+                    </h3>
+
+                    <div class="space-y-2.5 text-xs sm:text-sm">
+                        <div id="faixa-1" class="p-3.5 rounded-2xl border border-white/10 bg-black/20 flex items-start gap-3 transition">
+                            <span class="text-xl">👻</span>
+                            <div>
+                                <strong class="text-rose-400 block text-xs uppercase font-extrabold">15 a 25 pts • O Agente Secreto (Modo Invisível)</strong>
+                                <span class="text-slate-300 text-xs">Empresa tão discreta na internet que os clientes pesquisam e compram do concorrente.</span>
+                            </div>
+                        </div>
+
+                        <div id="faixa-2" class="p-3.5 rounded-2xl border border-white/10 bg-black/20 flex items-start gap-3 transition">
+                            <span class="text-xl">🩹</span>
+                            <div>
+                                <strong class="text-amber-400 block text-xs uppercase font-extrabold">26 a 38 pts • O Sobrevivente do Canva (Raça & Coragem)</strong>
+                                <span class="text-slate-300 text-xs">Atrai curiosos, mas a falta de padrão visual e prova social faz o cliente esfriar antes de chamar no WhatsApp.</span>
+                            </div>
+                        </div>
+
+                        <div id="faixa-3" class="p-3.5 rounded-2xl border border-white/10 bg-black/20 flex items-start gap-3 transition">
+                            <span class="text-xl">🏃‍♂️</span>
+                            <div>
+                                <strong class="text-sky-400 block text-xs uppercase font-extrabold">39 a 50 pts • O Quase-Lá (Batedor de Trave)</strong>
+                                <span class="text-slate-300 text-xs">O básico funciona muito bem, mas a demora e a falta de condução comercial no WhatsApp perdem vendas no vácuo.</span>
+                            </div>
+                        </div>
+
+                        <div id="faixa-4" class="p-3.5 rounded-2xl border border-white/10 bg-black/20 flex items-start gap-3 transition">
+                            <span class="text-xl">🦈</span>
+                            <div>
+                                <strong class="text-emerald-400 block text-xs uppercase font-extrabold">51 a 60 pts • O Tubarão da Região (Máquina de Vendas)</strong>
+                                <span class="text-slate-300 text-xs">Presença afiada e atendimento rápido. Pronto para acelerar forte no tráfego pago e dominar a praça.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulário de Captura & Qualificação de ICP -->
+                <div class="bg-alavancar-surface/95 border-2 border-alavancar-gold/60 rounded-3xl p-6 sm:p-8 backdrop-blur-md shadow-2xl glow-gold">
+                    <div class="text-center mb-6">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-alavancar-gold/10 text-alavancar-gold border border-alavancar-gold/30 text-xs font-bold uppercase tracking-wider mb-2">
+                            🎁 Isca Digital Pronta para Acesso
+                        </span>
+                        <h3 class="text-xl sm:text-2xl font-black text-white">
+                            Onde enviamos o seu Checklist Completo?
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-300 mt-1">
+                            Preencha abaixo para desbloquear seu acesso imediato e salvar em PDF.
+                        </p>
+                    </div>
+
+                    <form id="form-lead" onsubmit="enviarLead(event)" class="space-y-4 text-left">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 mb-1">Seu Nome Completo *</label>
+                            <input type="text" id="lead-nome" required placeholder="Ex: Carlos Silva" class="w-full px-4 py-3 rounded-xl bg-black/40 border border-white/15 text-white placeholder-slate-500 focus:outline-none focus:border-alavancar-gold text-sm transition">
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 mb-1">WhatsApp com DDD *</label>
+                                <input type="tel" id="lead-whatsapp" required placeholder="(11) 99999-9999" oninput="mascararTelefone(this)" class="w-full px-4 py-3 rounded-xl bg-black/40 border border-white/15 text-white placeholder-slate-500 focus:outline-none focus:border-alavancar-gold text-sm transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 mb-1">Seu Melhor E-mail *</label>
+                                <input type="email" id="lead-email" required placeholder="carlos@empresa.com.br" class="w-full px-4 py-3 rounded-xl bg-black/40 border border-white/15 text-white placeholder-slate-500 focus:outline-none focus:border-alavancar-gold text-sm transition">
+                            </div>
+                        </div>
+
+                        <!-- 4 Perguntas Estratégicas de Qualificação de ICP -->
+                        <div class="pt-2 border-t border-white/10 space-y-3">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 mb-1">1. Qual sua área de atuação?</label>
+                                <select id="lead-area" class="w-full px-4 py-3 rounded-xl bg-black/40 border border-white/15 text-white focus:outline-none focus:border-alavancar-gold text-sm">
+                                    <option value="Saúde (Psico, Fisio, Nutri, Estética, Personal)">Saúde (Psico, Fisio, Nutri, Estética, Personal)</option>
+                                    <option value="Escritório (Jurídico / Financeiro / Serviços Online)">Escritório (Jurídico / Financeiro / Serviços Online)</option>
+                                    <option value="Negócio Local (Serviço / Loja / Delivery)">Negócio Local (Serviço / Loja / Delivery)</option>
+                                    <option value="Outros">Outros</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 mb-1">2. Qual sua maior dificuldade hoje?</label>
+                                <select id="lead-dificuldade" class="w-full px-4 py-3 rounded-xl bg-black/40 border border-white/15 text-white focus:outline-none focus:border-alavancar-gold text-sm">
+                                    <option value="Sou invisível no Google e Instagram">Sou invisível no Google e Instagram</option>
+                                    <option value="Posto conteúdo mas ninguém me chama">Posto conteúdo mas ninguém me chama</option>
+                                    <option value="Dependo só de indicação">Dependo só de indicação</option>
+                                    <option value="Já faço anúncio mas não traz cliente">Já faço anúncio mas não traz cliente</option>
+                                </select>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-300 mb-1">3. Disponibilidade para Anúncios?</label>
+                                    <select id="lead-investimento" class="w-full px-4 py-3 rounded-xl bg-black/40 border border-white/15 text-white focus:outline-none focus:border-alavancar-gold text-sm">
+                                        <option value="Posso investir entre R$ 500 e R$ 1500">R$ 500 a R$ 1.500 / mês</option>
+                                        <option value="Já invisto acima de R$ 500/mês e quero melhorar">Já invisto > R$ 500 / mês</option>
+                                        <option value="Posso investir acima de R$ 1500 para escalar">Acima de R$ 1.500 / mês</option>
+                                        <option value="Não tenho interesse em anúncios">Não tenho interesse</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-300 mb-1">4. Faturamento Mensal Médio?</label>
+                                    <select id="lead-faturamento" class="w-full px-4 py-3 rounded-xl bg-black/40 border border-white/15 text-white focus:outline-none focus:border-alavancar-gold text-sm">
+                                        <option value="De R$3k a R$8k">De R$ 3k a R$ 8k</option>
+                                        <option value="Estou começando (até R$3k)">Até R$ 3k</option>
+                                        <option value="De R$8k a R$15k">De R$ 8k a R$ 15k</option>
+                                        <option value="Acima de R$15k">Acima de R$ 15k</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" id="btn-submit" class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-alavancar-gold to-amber-300 hover:from-amber-300 hover:to-alavancar-gold text-alavancar-dark font-black py-4 px-6 rounded-2xl shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all text-sm uppercase tracking-wider mt-4">
+                            <span>📥 Desbloquear Meu Checklist Agora</span>
+                            <span>→</span>
+                        </button>
+                    </form>
+                </div>
+
             </div>
 
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="w-full border-t border-white/10 py-6 text-center text-xs text-slate-400">
-        <p>© 2026 Alavancar no Digital • Todos os direitos reservados.</p>
+    <footer class="py-6 border-t border-white/10 text-center text-xs text-slate-400">
+        <p>© 2026 Alavancar no Digital • Gestão de Tráfego Pago & Presença Digital</p>
     </footer>
 
+    <!-- Script do Quiz & Supabase Integration -->
+    <script>
+        // Configuração Supabase
+        const SUPABASE_URL = "https://nbtvgfbwgxdfadzmgxxm.supabase.co";
+        const SUPABASE_KEY = "sb_publishable_momJXq6h--OBLFqCCyF6pg_4ZAWotXn";
+
+        // As 15 Perguntas Oficiais do Framework de Edutainment
+        const perguntas = [
+            {
+                categoria: "🗺️ Google Meu Negócio",
+                titulo: "Mão no peito: se um cliente jogar seu nome no GPS agora, ele chega na sua porta ou vai parar num canavial?",
+                opcoes: [
+                    { texto: "Endereço, telefone e horário 100% atualizados. O cliente chega aqui de olho fechado 🎯", pontos: 4 },
+                    { texto: "Tá certo, mas se mudar o horário de feriado eu só lembro de atualizar na semana seguinte 🏃‍♂️", pontos: 3 },
+                    { texto: "O número que tá lá é meu fixo antigo que nem toca mais, mas o endereço acho que tá certo ☎️😅", pontos: 2 },
+                    { texto: "Se o cliente confiar no mapa, ele vai parar no meio do nada ou na casa da minha tia 🚜🌾", pontos: 1 }
+                ]
+            },
+            {
+                categoria: "🗺️ Google Meu Negócio",
+                titulo: "Quando o Google tenta adivinhar o que você faz da vida, ele acerta de primeira ou te confunde com borracheiro?",
+                opcoes: [
+                    { texto: "Categoria principal cravada no meu serviço mais lucrativo e secundárias ativadas 🏆", pontos: 4 },
+                    { texto: "Coloquei uma categoria genérica lá quando criei e nunca mais mexi 🤷‍♂️", pontos: 3 },
+                    { texto: "Nem sabia que dava pra escolher mais de uma categoria no Google 🤡", pontos: 2 },
+                    { texto: "Acho que meu perfil tá cadastrado como 'serviços gerais' ou algo que Deus sabe lá o que é 🧙‍♂️", pontos: 1 }
+                ]
+            },
+            {
+                categoria: "🗺️ Google Meu Negócio",
+                titulo: "Fala a verdade: como estão suas avaliações no Google? Tipo constelação brilhante ou estrela solitária perdida?",
+                opcoes: [
+                    { texto: "Peço 5 estrelas até pro entregador e respondo todas com palavras-chave, praticamente um profissional 😎⭐", pontos: 4 },
+                    { texto: "Tenho algumas notas boas, mas só respondo com 'obrigado' quando sobra um tempinho 🐢", pontos: 3 },
+                    { texto: "Tem uma avaliação de 1 estrela lá de 2022 que me dá azia até hoje, mas finjo demência 🙈🤐", pontos: 2 },
+                    { texto: "Se a minha mãe e meus dois sócios não tiverem avaliado, o placar tá zerado 🦗🏜️", pontos: 1 }
+                ]
+            },
+            {
+                categoria: "🗺️ Google Meu Negócio",
+                titulo: "Se alguém abrir as fotos da sua empresa no Google Maps hoje, o que vai encontrar por lá?",
+                opcoes: [
+                    { texto: "Galeria de capa de revista: fachada linda, equipe sorrindo, novidades e ambiente impecável 📸✨", pontos: 4 },
+                    { texto: "Tem umas fotos boas, mas metade da equipe que aparece lá nem trabalha mais comigo 😅👥", pontos: 3 },
+                    { texto: "A última foto foi tirada em 2019 com um celular de flip e a parede já até mudou de cor 📱🏚️", pontos: 2 },
+                    { texto: "A única foto é aquela automática do Google Street View com um cachorro passando na calçada 🐕🚗", pontos: 1 }
+                ]
+            },
+            {
+                categoria: "🗺️ Google Meu Negócio",
+                titulo: "O seu catálogo de serviços no Google tá mastigadinho pro cliente ou tá parecendo cardápio de restaurante sem preço?",
+                opcoes: [
+                    { texto: "Todos os serviços cadastrados, com descrições detalhadas e explicados tin-tin por tin-tin 📝💡", pontos: 4 },
+                    { texto: "Coloquei o nome dos principais serviços, mas sem muita descrição porque bateu preguiça 🥱", pontos: 3 },
+                    { texto: "Só tá o nome da empresa e o cliente que lute pra adivinhar o que eu vendo 🥊🧐", pontos: 2 },
+                    { texto: "Dá pra cadastrar serviço no Google?! Descobri agora nessa pergunta 🤯🤦‍♂️", pontos: 1 }
+                ]
+            },
+            {
+                categoria: "🗺️ Google Meu Negócio",
+                titulo: "O Google sabe exatamente onde você atende ou ele acha que você só atende quem mora no mesmo quarteirão?",
+                opcoes: [
+                    { texto: "Cidades e bairros da região configurados milimetricamente no raio de cobertura 📍🎯", pontos: 4 },
+                    { texto: "Coloquei só o nome da minha cidade e deixei o resto no automático 🚗", pontos: 3 },
+                    { texto: "Acho que o Google tá mostrando minha empresa pro estado vizinho e eu nem atendo lá 🗺️👀", pontos: 2 },
+                    { texto: "Configuração de área? Pra mim isso era coisa de empresa de aviação ✈️🤷‍♂️", pontos: 1 }
+                ]
+            },
+            {
+                categoria: "📸 Instagram & Autoridade",
+                titulo: "Se um cliente cair no seu Instagram hoje, em 3 segundos ele entende o que você faz ou parece enigma egípcio?",
+                opcoes: [
+                    { texto: "Bio cirúrgica: frase de impacto, pra quem é, diferenciais e botão direto pro WhatsApp 🚀🔥", pontos: 4 },
+                    { texto: "Tá explicadinho, mas a bio tem aquele botão '...mais' enorme que corta meu link ✂️😬", pontos: 3 },
+                    { texto: "Minha bio tem frase motivacional, signo, emoji de café e quase nada sobre meu serviço ☕✨", pontos: 2 },
+                    { texto: "A bio tá vazia ou com uma hashtag de 2017 que ninguém usa mais 🦖🪦", pontos: 1 }
+                ]
+            },
+            {
+                categoria: "📸 Instagram & Autoridade",
+                titulo: "Os seus Destaques e Fixados do Instagram funcionam como vendedores 24h ou estão parecendo museu abandonado?",
+                opcoes: [
+                    { texto: "Vitrine perfeita: Fixados estratégicos + Destaques de Quem Sou, Serviços, Depoimentos e Dúvidas 🏛️💎", pontos: 4 },
+                    { texto: "Tem destaques organizados, mas os stories salvos são da época da pandemia 😷🕰️", pontos: 3 },
+                    { texto: "Só tenho um destaque com fotos de confraternização da firma e uma viagem de 2021 🏖️🍻", pontos: 2 },
+                    { texto: "Destaque? Aquelas bolinhas cinzas sem capa lá em cima? Nem mexo naquilo ⚪👻", pontos: 1 }
+                ]
+            },
+            {
+                categoria: "📸 Instagram & Autoridade",
+                titulo: "O link da sua Bio leva o cliente direto pro ouro ou manda ele pra uma floresta de opções confusas?",
+                opcoes: [
+                    { texto: "Link direto pro WhatsApp com mensagem pronta ou Landing Page rápida de alta conversão 📲⚡", pontos: 4 },
+                    { texto: "Tem um agregador de links com 15 botões diferentes e o cliente fica tonto tentando escolher 😵‍💫", pontos: 3 },
+                    { texto: "Coloquei um link encurtado que às vezes dá erro 404 e eu nem sei se funciona 🚧🤦‍♂️", pontos: 2 },
+                    { texto: "Não tem link nenhum... o cliente tem que salvar o DDD e o número na agenda na mão ✍️👴", pontos: 1 }
+                ]
+            },
+            {
+                categoria: "📸 Instagram & Autoridade",
+                titulo: "Você mostra os resultados e elogios dos seus clientes ou tá guardando o sucesso em segredo militar?",
+                opcoes: [
+                    { texto: "Prints de elogios, fotos de antes/depois e depoimentos postados toda semana com orgulho 🗣️💬", pontos: 4 },
+                    { texto: "Posto um print no stories uma vez no mês quando o cliente manda um 'muito obrigado' espontâneo 📬", pontos: 3 },
+                    { texto: "Tenho vergonha de pedir depoimento pro cliente, então finjo que não preciso 🫣🤐", pontos: 2 },
+                    { texto: "Meus clientes adoram meu trabalho, mas ninguém na internet sabe disso porque nunca postei 🤫🔒", pontos: 1 }
+                ]
+            },
+            {
+                categoria: "📸 Instagram & Autoridade",
+                titulo: "Olhando o seu feed agora: ele parece uma empresa consolidada ou um carnaval de panfletos aleatórios do Canva?",
+                opcoes: [
+                    { texto: "Padrão visual elegante, cores e fontes definidas e posts que transmitem autoridade imediata 🎨👑", pontos: 4 },
+                    { texto: "Tento manter um padrão, mas cada post parece que foi feito por uma pessoa diferente 🎭", pontos: 3 },
+                    { texto: "Meu feed é uma colcha de retalhos: foto embaçada, arte pronta do Canva e print cortado 🧩😵", pontos: 2 },
+                    { texto: "Só posto flyer de 'Feliz Dia das Mães' e quando bate a culpa de ter abandonado a rede 📅🕸️", pontos: 1 }
+                ]
+            },
+            {
+                categoria: "💬 Atendimento & WhatsApp",
+                titulo: "O seu WhatsApp da empresa passa credibilidade de empresa séria ou parece o número do seu sobrinho?",
+                opcoes: [
+                    { texto: "WhatsApp Business completo: foto profissional, catálogo, horário, endereço e mensagem de boas-vindas 💼✨", pontos: 4 },
+                    { texto: "É Business, mas a foto de perfil é uma logo cortada e não tem catálogo configurado 🖼️✂️", pontos: 3 },
+                    { texto: "Uso meu WhatsApp pessoal mesmo, com foto de óculos escuro na praia e status de churrasco 🕶️🥩", pontos: 2 },
+                    { texto: "Nem foto de perfil tem... o cliente manda mensagem achando que é golpe 🕵️‍♂️❌", pontos: 1 }
+                ]
+            },
+            {
+                categoria: "💬 Atendimento & WhatsApp",
+                titulo: "Quando entra um lead quente no WhatsApp perguntando preço, quanto tempo ele espera pra ser atendido?",
+                opcoes: [
+                    { texto: "Resposta ágil em menos de 10 minutos (ou acolhimento imediato com triagem rápida) ⚡🏃‍♂️", pontos: 4 },
+                    { texto: "Respondo em 1 a 2 horas quando dá uma folga no atendimento presencial ⏱️", pontos: 3 },
+                    { texto: "Demoro quase o dia todo... quando respondo, o cliente já comprou do concorrente 📉🤦‍♂️", pontos: 2 },
+                    { texto: "Se mandar mensagem de manhã, eu respondo de noite; se mandar na sexta, só na segunda-feira 🦥💤", pontos: 1 }
+                ]
+            },
+            {
+                categoria: "💬 Atendimento & WhatsApp",
+                titulo: "Na hora de passar o orçamento no WhatsApp: você conduz a conversa ou só joga o preço seco e reza?",
+                opcoes: [
+                    { texto: "Script estruturado: faço perguntas, entendo a dor, gero valor e conduzo pro fechamento com técnica 🎯💵", pontos: 4 },
+                    { texto: "Explico mais ou menos o que tá incluso e no final pergunto 'vamos fechar?' 🤷‍♂️", pontos: 3 },
+                    { texto: "Mando só o valor em texto ('Fica R$ 500') e fico esperando uma resposta mágica 🪄🦗", pontos: 2 },
+                    { texto: "Mando um PDF de 8 páginas sem falar nada e o cliente nunca mais me responde 📄🪦", pontos: 1 }
+                ]
+            },
+            {
+                categoria: "💬 Atendimento & WhatsApp",
+                titulo: "O que acontece quando o cliente recebe o orçamento e simplesmente some no vácuo ('vou ver e te aviso')?",
+                opcoes: [
+                    { texto: "Script de follow-up em 24h e 48h, quebro objeções e recupero mais de 30% das vendas que sumiram 🔄💰", pontos: 4 },
+                    { texto: "Mando um 'Olá, conseguiu ver o orçamento?' depois de 3 dias e torço pro cara responder 🤞", pontos: 3 },
+                    { texto: "Fico encarando a foto de perfil dele com raiva e esperando o milagre da volta dos que não foram 😡👻", pontos: 2 },
+                    { texto: "Deixo pra lá... quem tem orgulho não corre atrás de cliente sumido (e o caixa chora) 💸😭", pontos: 1 }
+                ]
+            }
+        ];
+
+        let indiceAtual = 0;
+        let pontuacaoTotal = 0;
+        let respostasDetalhadas = {};
+
+        function iniciarQuiz() {
+            document.getElementById('tela-intro').classList.add('hidden');
+            document.getElementById('container-progresso').classList.remove('hidden');
+            document.getElementById('tela-pergunta').classList.remove('hidden');
+            exibirPergunta();
+        }
+
+        function exibirPergunta() {
+            const p = perguntas[indiceAtual];
+            document.getElementById('categoria-badge').innerText = p.categoria;
+            document.getElementById('titulo-pergunta').innerText = p.titulo;
+
+            // Atualiza barra
+            const pct = Math.round(((indiceAtual + 1) / perguntas.length) * 100);
+            document.getElementById('label-etapa').innerText = `Pergunta ${indiceAtual + 1} de ${perguntas.length}`;
+            document.getElementById('label-porcentagem').innerText = `${pct}%`;
+            document.getElementById('barra-progresso').style.width = `${pct}%`;
+
+            // Renderiza opções
+            const container = document.getElementById('container-opcoes');
+            container.innerHTML = '';
+
+            p.opcoes.forEach((op, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 rounded-2xl bg-alavancar-card/60 hover:bg-alavancar-card border border-white/10 hover:border-alavancar-gold/60 transition-all transform hover:scale-[1.01] active:scale-[0.99] text-xs sm:text-sm text-slate-200 font-medium flex items-center justify-between gap-3";
+                btn.innerHTML = `<span>${op.texto}</span><span class="text-alavancar-gold font-bold">→</span>`;
+                btn.onclick = () => responder(op.pontos, idx);
+                container.appendChild(btn);
+            });
+        }
+
+        function responder(pontos, opcaoIndex) {
+            pontuacaoTotal += pontos;
+            respostasDetalhadas[`q${indiceAtual + 1}`] = { pontos, opcao: opcaoIndex };
+
+            if (indiceAtual < perguntas.length - 1) {
+                indiceAtual++;
+                exibirPergunta();
+            } else {
+                finalizarQuiz();
+            }
+        }
+
+        let arquetipoFinal = "";
+
+        function finalizarQuiz() {
+            document.getElementById('tela-pergunta').classList.add('hidden');
+            document.getElementById('container-progresso').classList.add('hidden');
+            document.getElementById('tela-final').classList.remove('hidden');
+
+            document.getElementById('pontuacao-final').innerText = pontuacaoTotal;
+
+            let arqNome = "";
+            let arqDiag = "";
+            let faixaId = "";
+
+            if (pontuacaoTotal <= 25) {
+                arqNome = "👻 O Agente Secreto (Modo Invisível)";
+                arqDiag = "Sua empresa é tão discreta no Google e nas redes que os clientes pesquisam o que você vende, não te acham e compram do concorrente. O Checklist vai te mostrar exatamente como destravar o básico para aparecer no mapa da sua região.";
+                faixaId = "faixa-1";
+            } else if (pontuacaoTotal <= 38) {
+                arqNome = "🩹 O Sobrevivente do Canva (Raça & Coragem)";
+                arqDiag = "Você não está invisível, mas a falta de padrão visual e prova social passa insegurança. O Checklist vai te ajudar a organizar sua vitrine e Destaques para transmitir autoridade imediata.";
+                faixaId = "faixa-2";
+            } else if (pontuacaoTotal <= 50) {
+                arqNome = "🏃‍♂️ O Quase-Lá (Batedor de Trave)";
+                arqDiag = "Sua presença é boa, mas pequenas falhas no atendimento e na condução de orçamentos no WhatsApp fazem o dinheiro escorrer pelos dedos. O Checklist traz a régua de follow-up para recuperar essas vendas.";
+                faixaId = "faixa-3";
+            } else {
+                arqNome = "🦈 O Tubarão da Região (Máquina de Vendas)";
+                arqDiag = "Presença afiada, perfil limpo e atendimento ágil! Sua empresa já é autoridade. O próximo passo é acelerar no tráfego pago para dominar as buscas e multiplicar seu faturamento.";
+                faixaId = "faixa-4";
+            }
+
+            arquetipoFinal = arqNome;
+            document.getElementById('arquetipo-nome').innerText = arqNome;
+            document.getElementById('arquetipo-diagnostico').innerText = arqDiag;
+
+            // Destaque visual na faixa
+            const cardFaixa = document.getElementById(faixaId);
+            if (cardFaixa) {
+                cardFaixa.className = "p-4 rounded-2xl border-2 border-alavancar-gold bg-alavancar-surface glow-active flex items-start gap-3";
+            }
+        }
+
+        function mascararTelefone(input) {
+            let v = input.value.replace(/\D/g, "");
+            if (v.length > 11) v = v.slice(0, 11);
+            if (v.length > 6) {
+                input.value = `(${v.slice(0, 2)}) ${v.slice(2, 7)}-${v.slice(7)}`;
+            } else if (v.length > 2) {
+                input.value = `(${v.slice(0, 2)}) ${v.slice(2)}`;
+            } else if (v.length > 0) {
+                input.value = `(${v}`;
+            } else {
+                input.value = "";
+            }
+        }
+
+        async function enviarLead(e) {
+            e.preventDefault();
+            const btn = document.getElementById('btn-submit');
+            btn.disabled = true;
+            btn.innerHTML = "<span>Enviando dados...</span>";
+
+            const nome = document.getElementById('lead-nome').value.trim();
+            const whatsapp = document.getElementById('lead-whatsapp').value.trim();
+            const email = document.getElementById('lead-email').value.trim();
+            const area = document.getElementById('lead-area').value;
+            const dificuldade = document.getElementById('lead-dificuldade').value;
+            const investimento = document.getElementById('lead-investimento').value;
+            const faturamento = document.getElementById('lead-faturamento').value;
+
+            // Extrai parâmetros UTM da URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const utmSource = urlParams.get('utm_source') || 'direto';
+            const utmMedium = urlParams.get('utm_medium') || null;
+            const utmCampaign = urlParams.get('utm_campaign') || null;
+
+            const payload = {
+                cliente_slug: 'alavancar-no-digital',
+                form_origem: 'quiz-raiox-edutainment',
+                nome: nome,
+                whatsapp: whatsapp,
+                email: email,
+                pontuacao_quiz: pontuacaoTotal,
+                arquetipo: arquetipoFinal,
+                area_atuacao: area,
+                maior_dificuldade: dificuldade,
+                disponibilidade_investimento: investimento,
+                faturamento_mensal: faturamento,
+                respostas_detalhadas: respostasDetalhadas,
+                utm_source: utmSource,
+                utm_medium: utmMedium,
+                utm_campaign: utmCampaign,
+                status_wpp: 'pendente',
+                status_sheets: 'pendente'
+            };
+
+            try {
+                // Envia para o Supabase via REST API
+                await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
+                    method: 'POST',
+                    headers: {
+                        'apikey': SUPABASE_KEY,
+                        'Authorization': `Bearer ${SUPABASE_KEY}`,
+                        'Content-Type': 'application/json',
+                        'Prefer': 'return=minimal'
+                    },
+                    body: JSON.stringify(payload)
+                });
+            } catch (err) {
+                console.error("Erro ao salvar lead no Supabase:", err);
+            } finally {
+                // Redireciona imediatamente para a Página de Obrigado
+                window.location.href = "obrigado.html";
+            }
+        }
+    </script>
 </body>
 </html>
