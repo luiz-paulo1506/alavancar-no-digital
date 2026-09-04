@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio de Presença Digital | Alavancar no Digital</title>
+  <style>
+    :root {
+      --bg-dark: #0F172A;
+      --card-dark: #1E293B;
+      --accent-gold: #F59E0B;
+      --accent-gold-hover: #D97706;
+      --text-light: #F8FAFC;
+      --text-muted: #94A3B8;
+      --border-dark: #334155;
+      --danger-bg: #450A0A;
+      --danger-text: #FCA5A5;
+      --orange-bg: #431407;
+      --orange-text: #FDBA74;
+      --warning-bg: #451A03;
+      --warning-text: #FCD34D;
+      --success-bg: #064E3B;
+      --success-text: #6EE7B7;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.5;
+      padding: 20px 12px;
+    }
+
+    .quiz-wrapper {
+      max-width: 620px;
+      margin: 20px auto;
+      background: var(--card-dark);
+      border-radius: 18px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      border: 1px solid var(--border-dark);
+    }
+
+    .quiz-header {
+      background: linear-gradient(135deg, #18181B 0%, #09090B 100%);
+      color: #fff;
+      padding: 26px 24px 22px;
+      text-align: center;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .author-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      color: var(--accent-gold);
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .author-badge:hover {
+      background: var(--accent-gold);
+      color: #0F172A;
+    }
+
+    .quiz-header h2 {
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+
+    .quiz-header h2 span { color: var(--accent-gold); }
+
+    .quiz-header p {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .progress {
+      height: 6px;
+      background: #334155;
+      width: 100%;
+    }
+
+    .progress .filled {
+      background: linear-gradient(90deg, #F59E0B 0%, #10B981 100%);
+      height: 100%;
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+
+    .quiz-body { padding: 28px 24px 20px; }
+
+    .question { display: none; animation: fadeIn 0.3s ease-in-out; }
+    .question.active { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .question-badge {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--accent-gold);
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .question p.title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .options button {
+      width: 100%;
+      padding: 14px 16px;
+      margin: 8px 0;
+      border: 1.5px solid var(--border-dark);
+      border-radius: 12px;
+      background: #0F172A;
+      color: #E2E8F0;
+      font-size: 0.96rem;
+      font-weight: 500;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+    }
+
+    .options button:hover {
+      border-color: var(--accent-gold);
+      background: rgba(245, 158, 11, 0.1);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.15);
+    }
+
+    .options button::after {
+      content: "➔";
+      font-size: 0.9rem;
+      color: var(--accent-gold);
+      opacity: 0.7;
+    }
+
+    /* RESULTADO */
+    .result-container { display: none; animation: fadeIn 0.4s ease-in-out; }
+    .result-container.active { display: block; }
+
+    .score-card {
+      text-align: center;
+      background: linear-gradient(180deg, #0F172A 0%, rgba(245, 158, 11, 0.08) 100%);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 14px;
+      padding: 24px 16px;
+      margin-bottom: 24px;
+    }
+
+    .score-card h3 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .score-number {
+      font-size: 3.2rem;
+      font-weight: 900;
+      color: var(--accent-gold);
+      line-height: 1;
+      margin: 8px 0;
+    }
+
+    .score-number span {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .badge-status {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin-top: 4px;
+    }
+
+    .status-ruim { background: var(--danger-bg); color: var(--danger-text); border: 1px solid #7F1D1D; }
+    .status-fraco { background: var(--orange-bg); color: var(--orange-text); border: 1px solid #7C2D12; }
+    .status-medio { background: var(--warning-bg); color: var(--warning-text); border: 1px solid #78350F; }
+    .status-bom { background: var(--success-bg); color: var(--success-text); border: 1px solid #065F46; }
+
+    .gabarito-section { margin: 24px 0; }
+    .gabarito-section h4 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 12px;
+    }
+
+    .gabarito-table { width: 100%; border-collapse: separate; border-spacing: 0 8px; }
+    .gabarito-row {
+      background: #0F172A;
+      border: 1.5px solid var(--border-dark);
+      border-radius: 10px;
+      transition: all 0.2s;
+    }
+
+    .gabarito-row td { padding: 12px 14px; vertical-align: top; font-size: 0.88rem; }
+    .gabarito-row td:first-child {
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      font-weight: 800;
+      white-space: nowrap;
+      width: 115px;
+    }
+
+    .gabarito-row td:last-child {
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      color: #CBD5E1;
+    }
+
+    .gabarito-row.user-match {
+      background: #0B1329;
+      border: 2px solid var(--accent-gold);
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.25);
+    }
+
+    .gabarito-row.user-match td:first-child { color: var(--accent-gold); }
+
+    .user-tag {
+      display: inline-block;
+      background: var(--accent-gold);
+      color: #0F172A;
+      font-size: 0.7rem;
+      font-weight: 900;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-top: 4px;
+    }
+
+    .impact-box {
+      background: rgba(245, 158, 11, 0.08);
+      border: 1.5px solid rgba(245, 158, 11, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 24px 0 20px;
+    }
+
+    .impact-box h4 { font-size: 1.05rem; color: #FFFFFF; font-weight: 800; margin-bottom: 8px; }
+    .impact-box p { font-size: 0.92rem; color: #CBD5E1; margin-bottom: 12px; }
+    .impact-benefits { list-style: none; }
+    .impact-benefits li {
+      font-size: 0.88rem;
+      color: #FFFFFF;
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .impact-benefits li::before { content: "⚡"; font-size: 0.85rem; }
+
+    .cta-btn {
+      display: block;
+      width: 100%;
+      padding: 16px 20px;
+      background: linear-gradient(135deg, var(--accent-gold) 0%, #D97706 100%);
+      color: #0F172A;
+      font-size: 1.1rem;
+      font-weight: 900;
+      text-align: center;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.35);
+      transition: all 0.25s ease;
+    }
+
+    .cta-btn:hover {
+      background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+      transform: translateY(-2px);
+    }
+
+    #lead-form {
+      margin-top: 16px;
+      padding: 18px;
+      background: #0F172A;
+      border-radius: 10px;
+      border: 1px dashed var(--accent-gold);
+      text-align: center;
+    }
+
+    .quiz-footer {
+      background: #09090B;
+      border-top: 1px solid var(--border-dark);
+      padding: 16px 20px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .quiz-footer a {
+      color: var(--accent-gold);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .quiz-footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-divider {
+      margin: 0 6px;
+      color: #334155;
+    }
+
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+
+<div class="quiz-wrapper">
+  <div class="quiz-header">
+    <a href="https://instagram.com/luiz.paulo1506" target="_blank" rel="noopener noreferrer" class="author-badge">
+      <span>📸 @luiz.paulo1506</span>
+      <span>•</span>
+      <span>Alavancar no Digital</span>
+    </a>
+    <h2>Desafio de <span>Presença Digital</span></h2>
+    <p>Descubra o Score Real da sua empresa em 15 etapas de diagnóstico.</p>
+  </div>
+  <div class="progress"><div class="filled"></div></div>
+
+  <div class="quiz-body">
+    <!-- Q1 -->
+    <div class="question active" id="q1">
+      <span class="question-badge">Google • Etapa 1/15</span>
+      <p class="title">1. O nome, endereço e telefone da sua empresa estão 100% atualizados no Perfil do Google?</p>
+      <div class="options">
+        <button data-points="4">Sim, dados 100% atualizados e verificados</button>
+        <button data-points="3">Atualizados, sem conferir verificação formal</button>
+        <button data-points="2">Dados desatualizados ou incompletos</button>
+        <button data-points="1">Não tenho perfil no Google</button>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="question" id="q2">
+      <span class="question-badge">Google • Etapa 2/15</span>
+      <p class="title">2. A categoria principal do Google Empresa está configurada no serviço mais procurado do seu negócio?</p>
+      <div class="options">
+        <button data-points="4">Sim, categoria exata mais lucrativa</button>
+        <button data-points="3">Categoria correta, mas sem secundárias</button>
+        <button data-points="2">Categoria genérica ou secundária</button>
+        <button data-points="1">Não sei qual categoria está ativa</button>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="question" id="q3">
+      <span class="question-badge">Google • Etapa 3/15</span>
+      <p class="title">3. Sua empresa tem pelo menos 3 avaliações recentes nos últimos 30 dias e todas respondidas?</p>
+      <div class="options">
+        <button data-points="4">Sim, avaliações constantes e todas respondidas</button>
+        <button data-points="3">Tenho avaliações, mas demoro a responder</button>
+        <button data-points="2">Poucas avaliações e sem respostas</button>
+        <button data-points="1">Poucas ou nenhuma avaliação recente</button>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="question" id="q4">
+      <span class="question-badge">Google • Etapa 4/15</span>
+      <p class="title">4. Sua ficha contém fotos de alta resolução (ambiente, equipe e serviços)?</p>
+      <div class="options">
+        <button data-points="4">Sim, fotos profissionais e recentes</button>
+        <button data-points="3">Fotos boas, mas antigas</button>
+        <button data-points="2">Poucas fotos e desatualizadas</button>
+        <button data-points="1">Nenhuma foto cadastrada</button>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="question" id="q5">
+      <span class="question-badge">Google • Etapa 5/15</span>
+      <p class="title">5. Você possui a lista completa de serviços e produtos com descrições no Google?</p>
+      <div class="options">
+        <button data-points="4">Sim, catálogo detalhado com palavras-chave</button>
+        <button data-points="3">Lista básica sem descrições completas</button>
+        <button data-points="2">Poucos serviços cadastrados</button>
+        <button data-points="1">Nenhum serviço cadastrado</button>
+      </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="question" id="q6">
+      <span class="question-badge">Google • Etapa 6/15</span>
+      <p class="title">6. As cidades e bairros atendidos estão configurados corretamente na sua ficha?</p>
+      <div class="options">
+        <button data-points="4">Sim, mapeamento estratégico de todas as regiões</button>
+        <button data-points="3">Apenas a cidade principal cadastrada</button>
+        <button data-points="2">Configuração imprecisa</button>
+        <button data-points="1">Não configurei área de cobertura</button>
+      </div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="question" id="q7">
+      <span class="question-badge">Google • Etapa 7/15</span>
+      <p class="title">7. Sua empresa publica novidades, promoções ou dicas no Google Meu Negócio toda semana?</p>
+      <div class="options">
+        <button data-points="4">Sim, posts semanais ativos com botão de contato</button>
+        <button data-points="3">Publico esporadicamente (1 a 2 vezes por mês)</button>
+        <button data-points="2">Publiquei apenas no início</button>
+        <button data-points="1">Nunca fiz post no Google</button>
+      </div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="question" id="q8">
+      <span class="question-badge">Instagram • Etapa 8/15</span>
+      <p class="title">8. A sua Bio possui proposta de valor clara e uma Chamada para Ação direta?</p>
+      <div class="options">
+        <button data-points="4">Sim, proposta direta e convite claro para contato</button>
+        <button data-points="3">Proposta boa, mas chamada para ação fraca</button>
+        <button data-points="2">Descrição genérica, sem CTA</button>
+        <button data-points="1">Bio confusa ou vazia</button>
+      </div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="question" id="q9">
+      <span class="question-badge">Instagram • Etapa 9/15</span>
+      <p class="title">9. O seu perfil possui pelo menos 3 destaques estratégicos e 2 posts fixados organizados?</p>
+      <div class="options">
+        <button data-points="4">Sim, tudo organizado e com capas padronizadas</button>
+        <button data-points="3">Tenho destaques, mas sem capas oficiais</button>
+        <button data-points="2">Alguns destaques, mas sem padrão</button>
+        <button data-points="1">Não utilizo destaques nem posts fixados</button>
+      </div>
+    </div>
+
+    <!-- Q10 -->
+    <div class="question" id="q10">
+      <span class="question-badge">Instagram • Etapa 10/15</span>
+      <p class="title">10. O link da sua Bio leva o visitante direto para WhatsApp, página de vendas ou formulário?</p>
+      <div class="options">
+        <button data-points="4">Sim, direciona direto para WhatsApp / LP</button>
+        <button data-points="3">Link com poucas opções focadas</button>
+        <button data-points="2">Link com excesso de botões ou site lento</button>
+        <button data-points="1">Não possuo link na Bio</button>
+      </div>
+    </div>
+
+    <!-- Q11 -->
+    <div class="question" id="q11">
+      <span class="question-badge">Instagram • Etapa 11/15</span>
+      <p class="title">11. Com que frequência você compartilha resultados, depoimentos de clientes e transformações reais?</p>
+      <div class="options">
+        <button data-points="4">Semanalmente com destaque permanente</button>
+        <button data-points="3">Às vezes nos stories, mas sem destaque fixo</button>
+        <button data-points="2">Raramente publico depoimentos</button>
+        <button data-points="1">Nunca compartilho provas sociais</button>
+      </div>
+    </div>
+
+    <!-- Q12 -->
+    <div class="question" id="q12">
+      <span class="question-badge">Instagram • Etapa 12/15</span>
+      <p class="title">12. Suas postagens seguem um padrão profissional de cores, fontes e design reconhecível?</p>
+      <div class="options">
+        <button data-points="4">Sim, identidade visual consistente e profissional</button>
+        <button data-points="3">Tento manter padrão, mas improviso artes</button>
+        <button data-points="2">Cada post tem um estilo totalmente diferente</button>
+        <button data-points="1">Não me preocupo com visual</button>
+      </div>
+    </div>
+
+    <!-- Q13 -->
+    <div class="question" id="q13">
+      <span class="question-badge">Atendimento • Etapa 13/15</span>
+      <p class="title">13. Seu WhatsApp utiliza foto profissional, catálogo, horário de funcionamento e localização preenchidos?</p>
+      <div class="options">
+        <button data-points="4">Sim, perfil comercial 100% completo</button>
+        <button data-points="3">WhatsApp Business ativo, catálogo incompleto</button>
+        <button data-points="2">WhatsApp comum pessoal</button>
+        <button data-points="1">Perfil comercial sem informações chave</button>
+      </div>
+    </div>
+
+    <!-- Q14 -->
+    <div class="question" id="q14">
+      <span class="question-badge">Atendimento • Etapa 14/15</span>
+      <p class="title">14. Existe um script de vendas padronizado para conduzir o cliente do "olá" até o fechamento?</p>
+      <div class="options">
+        <button data-points="4">Sim, roteiro validado com perguntas de qualificação</button>
+        <button data-points="3">Mensagem automática básica, resto no improviso</button>
+        <button data-points="2">Apenas respondo preço seco quando perguntam</button>
+        <button data-points="1">Sem qualquer padrão de atendimento</button>
+      </div>
+    </div>
+
+    <!-- Q15 -->
+    <div class="question" id="q15">
+      <span class="question-badge">Atendimento • Etapa 15/15</span>
+      <p class="title">15. Como é feito o acompanhamento de clientes que pediram orçamento mas pararam de responder?</p>
+      <div class="options">
+        <button data-points="4">Régua ativa de 2 a 3 contatos de acompanhamento</button>
+        <button data-points="3">Mando apenas uma mensagem após alguns dias</button>
+        <button data-points="2">Espero o cliente me procurar de novo</button>
+        <button data-points="1">Nunca faço acompanhamento pós-orçamento</button>
+      </div>
+    </div>
+
+    <!-- RESULTADO -->
+    <div class="result-container" id="result">
+      <div class="score-card">
+        <h3>Sua Nota do Desafio</h3>
+        <div class="score-number"><span id="score">0</span> <span>/ 60 pts</span></div>
+        <div id="status-badge" class="badge-status">Calculando...</div>
+      </div>
+
+      <div class="gabarito-section">
+        <h4>📊 Gabarito das Notas</h4>
+        
+        <table class="gabarito-table">
+          <tr class="gabarito-row" id="faixa-ruim">
+            <td>🔴 1 a 15 pts<br><small>Zona Crítica</small></td>
+            <td><strong>Presença na Zona Crítica</strong><br>Invisibilidade total. Você perde orçamentos diários para qualquer concorrente com o básico bem feito.</td>
+          </tr>
+
+          <tr class="gabarito-row" id="faixa-fraco">
+            <td>🟠 16 a 30 pts<br><small>Zona Instável</small></td>
+            <td><strong>Presença na Zona Instável</strong><br>Perfis amadores e tráfego disperso. A falta de autoridade faz os clientes desistirem antes do contato.</td>
+          </tr>
+          
+          <tr class="gabarito-row" id="faixa-medio">
+            <td>🟡 31 a 45 pts<br><small>Zona de Fuga</small></td>
+            <td><strong>Presença na Zona de Fuga</strong><br>Você atrai visitantes, mas não converte. Pequenos furos no processo fazem os clientes desistirem antes do fechamento.</td>
+          </tr>
+          
+          <tr class="gabarito-row" id="faixa-bom">
+            <td>🟢 46 a 60 pts<br><small>Zona de Escala</small></td>
+            <td><strong>Presença na Zona de Escala</strong><br>Sua base está sólida. Ajustes finos de autoridade e tráfego colocarão você no topo indiscutível do seu mercado.</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="impact-box">
+        <h4>⚡ Acelere seu Score com o Checklist:</h4>
+        <p>Suba sua nota e destrave mais vendas imediatamente:</p>
+        <ul class="impact-benefits">
+          <li>Alcance a pontuação máxima no Google e Instagram</li>
+          <li>Converta mais visitantes em clientes reais</li>
+          <li>Construa autoridade inquestionável na sua cidade</li>
+          <li>Recupere orçamentos que pararam de responder</li>
+        </ul>
+      </div>
+
+      <button class="cta-btn" id="show-form">📥 Desbloquear Checklist de Alta Conversão</button>
+
+      <div id="lead-form" class="hidden">
+        <p style="font-size:0.95rem; font-weight:600; color:#FFFFFF; margin-bottom:12px;">
+          Insira seus dados para receber o Checklist imediatamente:
+        </p>
+        <input type="text" placeholder="Seu Nome" style="width:100%; padding:12px; margin-bottom:8px; border:1px solid #334155; border-radius:8px; font-size:0.95rem; background:#1E293B; color:#fff;">
+        <input type="email" placeholder="Seu melhor E-mail" style="width:100%; padding:12px; margin-bottom:8px; border:1px solid #334155; border-radius:8px; font-size:0.95rem; background:#1E293B; color:#fff;">
+        <input type="tel" placeholder="WhatsApp (DDD + Número)" style="width:100%; padding:12px; margin-bottom:12px; border:1px solid #334155; border-radius:8px; font-size:0.95rem; background:#1E293B; color:#fff;">
+        <button class="cta-btn" style="padding:14px; font-size:1rem;">Receber no WhatsApp</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz-footer">
+    <a href="https://instagram.com/luiz.paulo1506" target="_blank" rel="noopener noreferrer">@luiz.paulo1506</a>
+    <span class="footer-divider">•</span>
+    <span>Alavancar no Digital</span>
+    <span class="footer-divider">•</span>
+    <span>Gestão de Tráfego Pago & Presença Digital</span>
+  </div>
+</div>
+
+<script>
+  let totalScore = 0;
+  const totalQuestions = 15;
+  const progressBar = document.querySelector('.progress .filled');
+
+  function updateProgress(step) {
+    const percent = (step / totalQuestions) * 100;
+    progressBar.style.width = percent + '%';
+  }
+
+  function goToNext(currentId) {
+    const curNum = parseInt(currentId.replace('q',''), 10);
+    const nextNum = curNum + 1;
+    const nextEl = document.getElementById('q' + nextNum);
+
+    if (nextEl) {
+      nextEl.classList.add('active');
+      updateProgress(nextNum - 1);
+    } else {
+      document.getElementById('result').classList.add('active');
+      showResult();
+    }
+  }
+
+  function handleOptionClick(btn) {
+    const pts = parseInt(btn.dataset.points, 10) || 0;
+    totalScore += pts;
+    const curQuestion = btn.closest('.question');
+    curQuestion.classList.remove('active');
+    goToNext(curQuestion.id);
+  }
+
+  document.querySelectorAll('.options button').forEach(btn => {
+    btn.addEventListener('click', () => handleOptionClick(btn));
+  });
+
+  function showResult() {
+    document.getElementById('score').textContent = totalScore;
+    const badge = document.getElementById('status-badge');
+    updateProgress(totalQuestions);
+
+    document.querySelectorAll('.gabarito-row').forEach(row => {
+      row.classList.remove('user-match');
+      const tag = row.querySelector('.user-tag');
+      if (tag) tag.remove();
+    });
+
+    let targetRowId = '';
+
+    if (totalScore <= 15) {
+      badge.textContent = 'Presença na Zona Crítica';
+      badge.className = 'badge-status status-ruim';
+      targetRowId = 'faixa-ruim';
+    } else if (totalScore <= 30) {
+      badge.textContent = 'Presença na Zona Instável';
+      badge.className = 'badge-status status-fraco';
+      targetRowId = 'faixa-fraco';
+    } else if (totalScore <= 45) {
+      badge.textContent = 'Presença na Zona de Fuga';
+      badge.className = 'badge-status status-medio';
+      targetRowId = 'faixa-medio';
+    } else {
+      badge.textContent = 'Presença na Zona de Escala';
+      badge.className = 'badge-status status-bom';
+      targetRowId = 'faixa-bom';
+    }
+
+    const matchedRow = document.getElementById(targetRowId);
+    if (matchedRow) {
+      matchedRow.classList.add('user-match');
+      const firstCol = matchedRow.querySelector('td:first-child');
+      const userTag = document.createElement('div');
+      userTag.className = 'user-tag';
+      userTag.textContent = '📍 SEU SCORE';
+      firstCol.appendChild(userTag);
+    }
+  }
+
+  document.getElementById('show-form').addEventListener('click', () => {
+    document.getElementById('lead-form').classList.remove('hidden');
+    document.getElementById('show-form').classList.add('hidden');
+  });
+
+  updateProgress(0);
+</script>
+</body>
+</html>
