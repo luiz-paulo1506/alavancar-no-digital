@@ -582,8 +582,8 @@
             };
 
             try {
-                // Envia para o Supabase via REST API na tabela dedicada do Quiz
-                await fetch(`${SUPABASE_URL}/rest/v1/leads_alavancar_quiz`, {
+                // 1. Envio para o Supabase (Banco de Dados Cloud)
+                const reqSupabase = fetch(`${SUPABASE_URL}/rest/v1/leads_alavancar_quiz`, {
                     method: 'POST',
                     headers: {
                         'apikey': SUPABASE_KEY,
@@ -593,8 +593,35 @@
                     },
                     body: JSON.stringify(payload)
                 });
+
+                // 2. Envio de Backup Instantâneo por E-mail (FormSubmit AJAX Gratuito)
+                const reqEmail = fetch('https://formsubmit.co/ajax/luiz.paulo1506@gmail.com', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        _subject: `🔥 Novo Lead no Quiz: ${nome} (${arquetipoFinal})`,
+                        _template: 'table',
+                        _captcha: 'false',
+                        'Nome': nome,
+                        'WhatsApp': whatsapp,
+                        'E-mail': email,
+                        'Pontuação Quiz': `${pontuacaoTotal} / 60 pontos`,
+                        'Arquétipo': arquetipoFinal,
+                        'Área de Atuação': area,
+                        'Maior Dificuldade': dificuldade,
+                        'Disponibilidade Anúncios': investimento,
+                        'Faturamento Mensal': faturamento,
+                        'Origem / UTM': utmSource
+                    })
+                });
+
+                // Dispara os dois em paralelo sem travamento
+                await Promise.allSettled([reqSupabase, reqEmail]);
             } catch (err) {
-                console.error("Erro ao salvar lead no Supabase:", err);
+                console.error("Erro no envio:", err);
             } finally {
                 // Redireciona imediatamente para a Página de Obrigado
                 window.location.href = "obrigado.html";
