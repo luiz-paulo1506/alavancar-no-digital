@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alavancar no Digital | Gestão de Tráfego & Marketing Digital Integrado</title>
+  <meta name="description" content="Tenha Google Ads, Instagram Ads, Landing Page de Alta Conversão e Google Meu Negócio para sua empresa por apenas R$ 597/mês. Sem fidelidade." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#141E57',
+              deep: '#070D24',
+              surface: '#0C1438',
+              card: '#101B4B',
+              gold: '#E7C614',
+              sky: '#639CD1',
+              wpp: '#25D366',
+              wppDark: '#1EBE5D'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    body {
+      background-color: #070D24;
+      color: #F3F4F6;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+    .glow-gold {
+      box-shadow: 0 0 35px -5px rgba(231, 198, 20, 0.35);
+    }
+    .glow-green {
+      box-shadow: 0 0 30px -5px rgba(37, 211, 102, 0.45);
+    }
+    .card-glass {
+      background: rgba(16, 27, 75, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .card-highlight {
+      background: linear-gradient(145deg, rgba(20, 30, 87, 0.95), rgba(7, 13, 36, 0.95));
+      border: 1px solid rgba(231, 198, 20, 0.4);
+    }
+    .text-gradient-gold {
+      background: linear-gradient(135deg, #FFFFFF 20%, #E7C614 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .badge-pulse {
+      animation: pulse-border 2.5s infinite;
+    }
+    @keyframes pulse-border {
+      0%, 100% { border-color: rgba(231, 198, 20, 0.4); transform: scale(1); }
+      50% { border-color: rgba(231, 198, 20, 0.9); transform: scale(1.02); }
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-brand-gold selection:text-brand-deep">
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="fixed top-0 left-0 w-full z-50 card-glass border-b border-white/5 py-3.5 px-4 md:px-8">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-gold to-yellow-600 flex items-center justify-center font-bold text-brand-deep text-xl shadow-lg shadow-brand-gold/20 group-hover:scale-105 transition-transform">
+          ⚡
+        </div>
+        <div>
+          <span class="text-lg font-extrabold tracking-tight text-white block leading-tight">Alavancar <span class="text-brand-gold">no Digital</span></span>
+          <span class="text-[11px] text-brand-sky font-semibold tracking-wider uppercase block">Gestão de Tráfego & Estratégia</span>
+        </div>
+      </a>
+
+      <!-- Nav Links -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+        <a href="#01" class="hover:text-brand-gold transition-colors">O que é</a>
+        <a href="#03" class="hover:text-brand-gold transition-colors">Landing Page</a>
+        <a href="#04" class="hover:text-brand-gold transition-colors">Google Meu Negócio</a>
+        <a href="#02" class="hover:text-brand-gold transition-colors font-semibold text-brand-gold">Plano R$ 597</a>
+        <a href="#05" class="hover:text-brand-gold transition-colors">Para Quem É</a>
+      </nav>
+
+      <!-- CTA Nav -->
+      <a href="https://wa.me/5541997936163?text=Olá!%20Vi%20o%20plano%20de%20R$%20597/mês%20no%20site%20e%20gostaria%20de%20iniciar%20minha%20gestão%20de%20tráfego." 
+         target="_blank" 
+         class="inline-flex items-center gap-2 bg-brand-wpp hover:bg-brand-wppDark text-slate-950 font-bold px-4 py-2.5 rounded-xl text-sm transition-all duration-300 hover:scale-105 shadow-md shadow-brand-wpp/25">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        <span>Falar no WhatsApp</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="pt-32 pb-20 md:pt-40 md:pb-28 px-4 relative overflow-hidden">
+    <!-- Luz de Fundo Decorativa -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-navy/50 rounded-full blur-[140px] pointer-events-none"></div>
+    <div class="absolute top-1/3 left-1/3 w-[350px] h-[350px] bg-brand-gold/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto text-center relative z-10">
+      <!-- Badge de Preço & Oferta -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full card-glass border border-brand-gold/40 text-brand-gold text-xs sm:text-sm font-bold uppercase tracking-wider mb-6 badge-pulse">
+        <span class="w-2 h-2 rounded-full bg-brand-gold animate-ping"></span>
+        Estrutura Digital Completa por Apenas R$ 597/mês
+      </div>
+
+      <!-- Headline Principal -->
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.15] mb-6">
+        Pare de queimar dinheiro em anúncios e receba <br class="hidden sm:inline" />
+        <span class="text-gradient-gold">Leads Qualificados no seu WhatsApp</span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="text-base sm:text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-10">
+        Tenha uma equipe especializada cuidando de <strong class="text-white">Google Ads, Instagram Ads, Landing Page de Alta Conversão</strong> e <strong class="text-white">Google Meu Negócio</strong>. Tudo integrado, sem contrato de fidelidade e focado em vendas reais.
+      </p>
+
+      <!-- CTA Principal & Prova de Risco Zero -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+        <a href="https://wa.me/5541997936163?text=Olá!%20Quero%20aproveitar%20o%20plano%20de%20R$%20597/mês%20para%20minha%20empresa." 
+           target="_blank"
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-wpp hover:bg-brand-wppDark text-slate-950 font-black px-8 py-4 rounded-2xl text-base sm:text-lg transition-all duration-300 hover:scale-105 glow-green">
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          <span>QUERO CLIENTES NO WHATSAPP</span>
+        </a>
+        <a href="#02" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 card-glass hover:bg-white/10 text-white font-semibold px-6 py-4 rounded-2xl text-base transition-colors border border-white/10">
+          <span>Ver Tudo o Que Está Incluso</span>
+          <svg class="w-5 h-5 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </a>
+      </div>
+
+      <!-- Micro-Trust & Prova -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-white/10 text-center">
+        <div class="p-3">
+          <p class="text-2xl font-black text-brand-gold">R$ 597/mês</p>
+          <p class="text-xs text-slate-400">Preço Fixo Sem Surpresas</p>
+        </div>
+        <div class="p-3">
+          <p class="text-2xl font-black text-white">7 Dias</p>
+          <p class="text-xs text-slate-400">Setup Rápido no Ar</p>
+        </div>
+        <div class="p-3">
+          <p class="text-2xl font-black text-brand-sky">Zero</p>
+          <p class="text-xs text-slate-400">Sem Contrato de Fidelidade</p>
+        </div>
+        <div class="p-3">
+          <p class="text-2xl font-black text-brand-wpp">100%</p>
+          <p class="text-xs text-slate-400">Focado em WhatsApp</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= O QUE É / ANTECIPAÇÃO (#01) ================= -->
+  <section id="01" class="py-20 bg-brand-surface/60 border-y border-white/5 relative">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-brand-gold text-xs font-extrabold tracking-widest uppercase block mb-2">#01 — Tráfego Google e Meta Ads</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white mb-4">
+          Como funciona a Gestão de Tráfego da Alavancar?
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base">
+          Nós não apenas "apertamos botões" de anúncios. Nós construímos o ecossistema completo para que a sua empresa seja encontrada por quem tem dinheiro e interesse imediato no seu serviço.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="card-glass p-8 rounded-3xl relative overflow-hidden group hover:border-brand-gold/40 transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-brand-navy border border-brand-gold/30 flex items-center justify-center text-2xl mb-6 text-brand-gold group-hover:scale-110 transition-transform">
+            🔍
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Google Ads de Alta Intenção</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-4">
+            Colocamos sua empresa na primeira página do Google para quem está ativamente pesquisando termos de contratação e orçamento (fundo de funil).
+          </p>
+          <ul class="text-xs text-slate-400 space-y-2">
+            <li class="flex items-center gap-2"><span class="text-brand-gold font-bold">✓</span> Rede de Pesquisa Hiper-Focada</li>
+            <li class="flex items-center gap-2"><span class="text-brand-gold font-bold">✓</span> Blindagem em 3 Camadas de Negativas</li>
+            <li class="flex items-center gap-2"><span class="text-brand-gold font-bold">✓</span> Anúncios Responsivos & Sitelinks</li>
+          </ul>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card-glass p-8 rounded-3xl relative overflow-hidden group hover:border-brand-sky/40 transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-brand-navy border border-brand-sky/30 flex items-center justify-center text-2xl mb-6 text-brand-sky group-hover:scale-110 transition-transform">
+            📱
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Instagram & Facebook Ads</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-4">
+            Anúncios visuais persuasivos direcionados para o público certo da sua cidade ou região, gerando desejo e direcionando direto para o WhatsApp.
+          </p>
+          <ul class="text-xs text-slate-400 space-y-2">
+            <li class="flex items-center gap-2"><span class="text-brand-sky font-bold">✓</span> Segmentação por Raio/Geolocalização</li>
+            <li class="flex items-center gap-2"><span class="text-brand-sky font-bold">✓</span> Criativos Visuais Photo-Free de Alto Impacto</li>
+            <li class="flex items-center gap-2"><span class="text-brand-sky font-bold">✓</span> Botão Direto para Conversa no WhatsApp</li>
+          </ul>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card-glass p-8 rounded-3xl relative overflow-hidden group hover:border-brand-wpp/40 transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-brand-navy border border-brand-wpp/30 flex items-center justify-center text-2xl mb-6 text-brand-wpp group-hover:scale-110 transition-transform">
+            🎯
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Otimização & Relatórios</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-4">
+            Acompanhamento constante dos resultados, corte de termos que gastam sem converter e relatórios semanais com linguagem humana e direta.
+          </p>
+          <ul class="text-xs text-slate-400 space-y-2">
+            <li class="flex items-center gap-2"><span class="text-brand-wpp font-bold">✓</span> Relatórios Semanais de WhatsApp</li>
+            <li class="flex items-center gap-2"><span class="text-brand-wpp font-bold">✓</span> Análise de CPA (Custo por Lead)</li>
+            <li class="flex items-center gap-2"><span class="text-brand-wpp font-bold">✓</span> Otimizações de Lance & Orçamento</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PLANO DETALHADO (#02) ================= -->
+  <section id="02" class="py-24 px-4 relative">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-brand-gold text-xs font-extrabold tracking-widest uppercase block mb-2">#02 — Oferta & Transparência</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-white mb-4">
+          O que está 100% Incluso no Plano de <span class="text-brand-gold">R$ 597/mês</span>?
+        </h2>
+        <p class="text-slate-300 text-base">
+          Tudo o que sua empresa precisa para ter uma presença comercial agressiva na internet, sem custos ocultos.
+        </p>
+      </div>
+
+      <!-- Card Mestre da Oferta -->
+      <div class="card-highlight rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl glow-gold border border-brand-gold/50">
+        <!-- Selo Flutuante -->
+        <div class="absolute top-0 right-0 bg-brand-gold text-slate-950 font-black text-xs uppercase px-6 py-2 rounded-bl-2xl tracking-widest">
+          Mais Vendido
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+          <!-- Coluna da Esquerda: Preço & Resumo -->
+          <div class="lg:col-span-5 text-center lg:text-left border-b lg:border-b-0 lg:border-r border-white/10 pb-8 lg:pb-0 lg:pr-8">
+            <span class="text-xs font-bold text-brand-sky uppercase tracking-wider block mb-1">Plano Essencial Alavancar</span>
+            <h3 class="text-2xl md:text-3xl font-black text-white mb-3">Gestão de Tráfego & Estrutura</h3>
+            <div class="my-6">
+              <span class="text-slate-400 text-sm line-through block">De R$ 1.200,00/mês</span>
+              <div class="flex items-baseline justify-center lg:justify-start gap-1">
+                <span class="text-lg font-bold text-brand-gold">R$</span>
+                <span class="text-5xl md:text-6xl font-black text-white tracking-tight">597</span>
+                <span class="text-slate-400 font-medium text-sm">/mês</span>
+              </div>
+              <p class="text-xs text-brand-wpp font-semibold mt-2">Sem taxa de adesão • Sem multa rescisória</p>
+            </div>
+            
+            <a href="https://wa.me/5541997936163?text=Olá!%20Quero%20contratar%20o%20Plano%20de%20R$%20597/mês%20da%20Alavancar." 
+               target="_blank"
+               class="w-full inline-flex items-center justify-center gap-3 bg-brand-wpp hover:bg-brand-wppDark text-slate-950 font-black px-6 py-4 rounded-xl text-base transition-all duration-300 hover:scale-105 glow-green shadow-lg">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>CONTRATAR AGORA</span>
+            </a>
+          </div>
+
+          <!-- Coluna da Direita: Lista de Entregáveis -->
+          <div class="lg:col-span-7 space-y-4">
+            <h4 class="text-sm font-bold text-brand-gold uppercase tracking-wider mb-2">Entregáveis Oficiais Inclusos:</h4>
+
+            <div class="space-y-3">
+              <div class="flex items-start gap-3 bg-white/5 p-3 rounded-xl border border-white/5">
+                <div class="w-6 h-6 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</div>
+                <div>
+                  <strong class="text-white text-sm block">1. Gestão Completa de Google Ads</strong>
+                  <span class="text-xs text-slate-300">Criação, pesquisa de termos, blindagem de 39 palavras tóxicas + 7 listas e acompanhamento de lances.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 bg-white/5 p-3 rounded-xl border border-white/5">
+                <div class="w-6 h-6 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</div>
+                <div>
+                  <strong class="text-white text-sm block">2. Gestão de Meta Ads (Instagram & Facebook)</strong>
+                  <span class="text-xs text-slate-300">Segmentação local por geolocalização (raio da sua empresa), interesses qualificados e retargeting.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 bg-white/5 p-3 rounded-xl border border-white/5">
+                <div class="w-6 h-6 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</div>
+                <div>
+                  <strong class="text-white text-sm block">3. Criação de Landing Page de Alta Conversão Inclusa</strong>
+                  <span class="text-xs text-slate-300">Página moderna, ultrarrápida, 100% responsiva e com botão de WhatsApp integrado.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 bg-white/5 p-3 rounded-xl border border-white/5">
+                <div class="w-6 h-6 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</div>
+                <div>
+                  <strong class="text-white text-sm block">4. Otimização do Google Meu Negócio</strong>
+                  <span class="text-xs text-slate-300">Auditoria dos 17 pontos, organização de categorias, serviços e estratégia de avaliações.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 bg-white/5 p-3 rounded-xl border border-white/5">
+                <div class="w-6 h-6 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</div>
+                <div>
+                  <strong class="text-white text-sm block">5. Copywriting e Criação de Criativos</strong>
+                  <span class="text-xs text-slate-300">Textos persuasivos para anúncios e layouts gráficos focados em resposta direta.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 bg-white/5 p-3 rounded-xl border border-white/5">
+                <div class="w-6 h-6 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</div>
+                <div>
+                  <strong class="text-white text-sm block">6. Relatórios Transparentes & Suporte Direto</strong>
+                  <span class="text-xs text-slate-300">Acompanhamento dos resultados no WhatsApp com suporte próximo ao empresário.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LANDING PAGE INCLUSA (#03) ================= -->
+  <section id="03" class="py-20 bg-brand-surface/60 border-y border-white/5">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="text-brand-gold text-xs font-extrabold tracking-widest uppercase block mb-2">#03 — Máquina de Conversão</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-6">
+            Por que ter uma Landing Page inclusa faz toda a diferença?
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+            Não adianta criar bons anúncios se o visitante clica e cai em um site lento, confuso ou com dezenas de distrações.
+          </p>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-8">
+            Nós construímos para a sua empresa uma <strong class="text-white">Landing Page de alta velocidade</strong>, desenvolvida para responder a dor do cliente em 3 segundos e conduzi-lo direto para o seu WhatsApp comercial.
+          </p>
+          
+          <div class="space-y-3 text-sm">
+            <div class="flex items-center gap-3 text-slate-200">
+              <span class="text-brand-gold font-bold">⚡</span> Carregamento instantâneo no celular (Mobile-First)
+            </div>
+            <div class="flex items-center gap-3 text-slate-200">
+              <span class="text-brand-gold font-bold">💬</span> Botão flutuante de WhatsApp com mensagem pré-configurada
+            </div>
+            <div class="flex items-center gap-3 text-slate-200">
+              <span class="text-brand-gold font-bold">🎯</span> Textos persuasivos de resposta direta e quebra de objeções
+            </div>
+            <div class="flex items-center gap-3 text-slate-200">
+              <span class="text-brand-gold font-bold">📊</span> Integração total com Google Analytics e Tag Manager
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Ilustrativo Card -->
+        <div class="card-glass p-8 rounded-3xl border border-white/10 relative">
+          <div class="bg-brand-deep rounded-2xl p-5 border border-white/10 shadow-2xl">
+            <div class="flex items-center gap-2 mb-4 border-b border-white/10 pb-3">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+              <span class="text-[11px] text-slate-400 font-mono ml-2">suaempresa.com.br/atendimento</span>
+            </div>
+            <div class="space-y-3">
+              <div class="h-6 w-3/4 bg-brand-navy rounded-md animate-pulse"></div>
+              <div class="h-4 w-1/2 bg-slate-700 rounded-md"></div>
+              <div class="p-4 rounded-xl bg-brand-surface border border-brand-gold/20 my-4 text-center">
+                <span class="text-xs text-brand-gold font-bold block">CTA DE ALTO IMPACTO</span>
+                <span class="text-sm font-extrabold text-white">Chamar no WhatsApp em 1 Clique</span>
+              </div>
+              <div class="grid grid-cols-3 gap-2">
+                <div class="h-14 bg-white/5 rounded-lg"></div>
+                <div class="h-14 bg-white/5 rounded-lg"></div>
+                <div class="h-14 bg-white/5 rounded-lg"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GOOGLE MEU NEGÓCIO (#04) ================= -->
+  <section id="04" class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Card Gráfico -->
+        <div class="order-2 md:order-1 card-glass p-8 rounded-3xl border border-white/10 text-center">
+          <div class="w-16 h-16 rounded-2xl bg-brand-navy border border-brand-gold/40 flex items-center justify-center text-3xl mx-auto mb-6 text-brand-gold shadow-lg shadow-brand-gold/10">
+            📍
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Google Maps & Busca Local</h3>
+          <p class="text-xs text-brand-sky font-semibold mb-6">Presença dominante na sua cidade e bairro</p>
+          <div class="bg-brand-deep p-4 rounded-2xl border border-white/5 text-left space-y-2 text-xs">
+            <div class="flex justify-between items-center text-slate-300">
+              <span>⭐ Avaliações e Reputação:</span>
+              <span class="text-brand-gold font-bold">5.0 Estrelas</span>
+            </div>
+            <div class="flex justify-between items-center text-slate-300">
+              <span>🏷️ Serviços Cadastrados:</span>
+              <span class="text-emerald-400 font-bold">100% Otimizados</span>
+            </div>
+            <div class="flex justify-between items-center text-slate-300">
+              <span>📞 Chamadas & Rotas:</span>
+              <span class="text-brand-sky font-bold">Link Direto Wpp</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-1 md:order-2">
+          <span class="text-brand-gold text-xs font-extrabold tracking-widest uppercase block mb-2">#04 — Presença Local</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-6">
+            Destaque Máximo no Google Meu Negócio
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+            Quando alguém pesquisa pelo seu serviço na sua região, o perfil do Google é o primeiro elemento que transmite confiança imediata.
+          </p>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+            No plano de R$ 597, nós realizamos a auditoria completa da sua ficha, organizamos as categorias corretas, cadastramos seus serviços com descrições otimizadas para SEO e orientamos a coleta de depoimentos que multiplicam sua autoridade.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PARA QUEM É VS NÃO É (#05) ================= -->
+  <section id="05" class="py-20 bg-brand-surface/60 border-y border-white/5">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-brand-gold text-xs font-extrabold tracking-widest uppercase block mb-2">#05 — Qualificação de Clientes</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+          Este plano é indicado para a sua empresa?
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base">
+          Trabalhamos com transparência radical para garantir que nossa solução realmente gere lucro para você.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Para Quem É -->
+        <div class="card-glass p-8 rounded-3xl border-l-4 border-l-emerald-500">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xl">✅</div>
+            <h3 class="text-xl font-bold text-white">Para quem É ideal:</h3>
+          </div>
+          <ul class="space-y-4 text-sm text-slate-300">
+            <li class="flex items-start gap-3">
+              <span class="text-emerald-400 font-bold shrink-0">✓</span>
+              <span><strong>Prestadores de Serviços:</strong> Advogados, clínicas, consultórios, engenharia, contabilidade, reformas e serviços especializados.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-emerald-400 font-bold shrink-0">✓</span>
+              <span><strong>Negócios Locais & PMEs:</strong> Empresas que vendem via WhatsApp ou atendimento comercial presencial.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-emerald-400 font-bold shrink-0">✓</span>
+              <span><strong>Empresários que querem previsibilidade:</strong> Quem está cansado de depender exclusivamente de indicações e boca a boca.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-emerald-400 font-bold shrink-0">✓</span>
+              <span><strong>Quem busca agilidade:</strong> Quem deseja ter estrutura no ar em 7 dias com suporte direto e próximo.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Para Quem Não É -->
+        <div class="card-glass p-8 rounded-3xl border-l-4 border-l-red-500">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center font-bold text-xl">❌</div>
+            <h3 class="text-xl font-bold text-white">Para quem NÃO é indicado:</h3>
+          </div>
+          <ul class="space-y-4 text-sm text-slate-300">
+            <li class="flex items-start gap-3">
+              <span class="text-red-400 font-bold shrink-0">✗</span>
+              <span><strong>Quem busca milagre da noite para o dia:</strong> Tráfego pago exige método, consistência e bom atendimento comercial.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-400 font-bold shrink-0">✗</span>
+              <span><strong>Empresas sem estrutura para atender:</strong> Se seu time não responde o WhatsApp com agilidade, o tráfego não fará milagres.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-red-400 font-bold shrink-0">✗</span>
+              <span><strong>Lojas de E-commerce multinacionais:</strong> Este plano é focado em captação de leads e negócios de serviços/locais.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Dúvidas Frequentes</h2>
+        <p class="text-slate-300 text-sm">Respostas diretas para as perguntas mais comuns.</p>
+      </div>
+
+      <div class="space-y-4">
+        <details class="card-glass p-6 rounded-2xl group [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+          <summary class="flex justify-between items-center font-bold text-white text-base">
+            <span>O valor de R$ 597/mês inclui o orçamento que pago para o Google/Meta?</span>
+            <span class="text-brand-gold group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="text-slate-300 text-sm mt-4 leading-relaxed">
+            Não. Os R$ 597/mês são referentes aos honorários da agência (gestão técnica, criação da landing page, criativos, copywriting, relatórios e otimização). O valor investido em anúncios (ex: R$ 6, R$ 10, R$ 20/dia) é pago diretamente por você às plataformas (Google e Meta) via cartão ou boleto.
+          </p>
+        </details>
+
+        <details class="card-glass p-6 rounded-2xl group [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+          <summary class="flex justify-between items-center font-bold text-white text-base">
+            <span>Existe contrato de fidelidade ou multa se eu quiser cancelar?</span>
+            <span class="text-brand-gold group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="text-slate-300 text-sm mt-4 leading-relaxed">
+            Não existe fidelidade e nem multa. Trabalhamos no formato mensal pré-pago. Se a qualquer momento você decidir pausar ou encerrar, basta avisar antes da próxima renovação.
+          </p>
+        </details>
+
+        <details class="card-glass p-6 rounded-2xl group [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+          <summary class="flex justify-between items-center font-bold text-white text-base">
+            <span>Em quanto tempo minha campanha e landing page estarão no ar?</span>
+            <span class="text-brand-gold group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="text-slate-300 text-sm mt-4 leading-relaxed">
+            Nosso prazo padrão de setup é de até 7 dias úteis após o recebimento das informações do seu negócio. Nesse período configuramos a conta, criamos os anúncios, a Landing Page e as negativas de proteção.
+          </p>
+        </details>
+
+        <details class="card-glass p-6 rounded-2xl group [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+          <summary class="flex justify-between items-center font-bold text-white text-base">
+            <span>Eu não entendo nada de tecnologia, vocês me ajudam?</span>
+            <span class="text-brand-gold group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="text-slate-300 text-sm mt-4 leading-relaxed">
+            Sim! Cuidamos de 100% da parte técnica (pixels, tags, domínios, anúncios e palavras-chave). A sua única responsabilidade é atender os clientes que chegarem no seu WhatsApp querendo comprar.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA FINAL (#06) ================= -->
+  <section id="06" class="py-24 px-4 bg-gradient-to-b from-brand-deep via-brand-navy/60 to-brand-deep text-center relative overflow-hidden">
+    <div class="max-w-4xl mx-auto relative z-10">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full card-glass border border-brand-gold/40 text-brand-gold text-xs font-bold uppercase tracking-wider mb-6">
+        🚀 Vagas Limitadas por Região
+      </div>
+
+      <h2 class="text-3xl sm:text-5xl font-black text-white mb-6 leading-tight">
+        Pronto para atrair clientes reais para a sua empresa?
+      </h2>
+
+      <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+        Clique no botão abaixo, tire suas dúvidas diretamente com nosso especialista e inicie a estruturação da sua máquina de vendas ainda hoje.
+      </p>
+
+      <a href="https://wa.me/5541997936163?text=Olá!%20Quero%20iniciar%20minha%20gestão%20de%20tráfego%20no%20plano%20de%20R$%20597/mês." 
+         target="_blank"
+         class="inline-flex items-center justify-center gap-3 bg-brand-wpp hover:bg-brand-wppDark text-slate-950 font-black px-10 py-5 rounded-2xl text-lg sm:text-xl transition-all duration-300 hover:scale-105 glow-green shadow-2xl">
+        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        <span>FALAR AGORA COM O ESPECIALISTA</span>
+      </a>
+      
+      <p class="text-xs text-slate-400 mt-6">Atendimento direto • Resposta em poucos minutos</p>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="py-10 border-t border-white/5 bg-brand-deep text-center text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto px-4 space-y-3">
+      <p class="text-slate-400 font-bold">Alavancar no Digital — Gestão de Tráfego & Performance</p>
+      <p>CNPJ: 43.834.821/0001-00 • Curitiba/PR & São Paulo/SP</p>
+      <p>© 2026 Todos os direitos reservados. Não possuímos vínculo direto com o Google LLC ou Meta Platforms Inc.</p>
+    </div>
+  </footer>
+
+  <!-- ================= BOTÃO FLUTUANTE WHATSAPP ================= -->
+  <a href="https://wa.me/5541997936163?text=Olá!%20Estou%20no%20site%20e%20quero%20saber%20mais%20sobre%20o%20plano%20de%20R$%20597." 
+     target="_blank" 
+     class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 bg-brand-wpp hover:bg-brand-wppDark text-slate-950 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 glow-green"
+     aria-label="Falar no WhatsApp">
+    <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  </a>
+
+</body>
+</html>
