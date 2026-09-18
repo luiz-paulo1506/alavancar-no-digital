@@ -31,12 +31,20 @@
     fbq('init', '1562567055165634');
     fbq('track', 'PageView');
 
-    // Rastreamento automático de cliques nos botões de WhatsApp
+    // Rastreamento automático anti-duplicação (1 única conversão por sessão)
     document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"]').forEach(function(btn) {
         btn.addEventListener('click', function() {
-          fbq('track', 'Contact', { content_name: 'Reserva Mesa WhatsApp Silvia' });
-          fbq('trackCustom', 'WhatsAppClick', { evento: 'Grande Baile Caciques' });
+          if (!sessionStorage.getItem('meta_contact_tracked')) {
+            sessionStorage.setItem('meta_contact_tracked', 'true');
+            fbq('track', 'Contact', { 
+              content_name: 'Reserva Mesa WhatsApp Silvia',
+              status: 'unique_session'
+            });
+            fbq('trackCustom', 'WhatsAppClick', { 
+              evento: 'Grande Baile Caciques'
+            });
+          }
         });
       });
     });
